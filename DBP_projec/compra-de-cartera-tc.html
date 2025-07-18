@@ -3,12 +3,632 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scotiabank Colpatria - Servicios Financieros</title>
-    
-    <meta name="description" content="Scotiabank Colpatria ofrece servicios financieros completos: tarjetas de crédito, cuentas de ahorro, préstamos, seguros e inversiones.">
-    
-    <link rel="shortcut icon" href="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/imagenes/favicon-scotiabank-colpatria.ico">
-    <link rel="stylesheet" href="styles.css">
+    <title>Scotiabank Colpatria - Compra de cartera para unificar deudas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .header {
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header-top {
+            background: #f8f9fa;
+            padding: 8px 0;
+            font-size: 13px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #666;
+            font-size: 13px;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #e31e24;
+        }
+
+        .header-main {
+            padding: 15px 0;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            flex-shrink: 0;
+        }
+
+        .logo-img {
+            height: 45px;
+        }
+
+        .search-box {
+            position: relative;
+            flex-grow: 1;
+            max-width: 400px;
+            margin: 0 30px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 12px 50px 12px 20px;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .search-input:focus {
+            border-color: #e31e24;
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #666;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .quick-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .quick-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #666;
+            font-size: 12px;
+            transition: color 0.3s;
+            padding: 5px;
+        }
+
+        .quick-link:hover {
+            color: #e31e24;
+        }
+
+        .quick-link .icon {
+            font-size: 16px;
+            margin-bottom: 2px;
+        }
+
+        .quick-link.pse img {
+            width: 20px;
+            height: 16px;
+            margin-bottom: 2px;
+        }
+
+        .login-dropdown {
+            position: relative;
+        }
+
+        .login-btn {
+            background: #e31e24;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.3s;
+        }
+
+        .login-btn:hover {
+            background: #c11e24;
+        }
+
+        .login-btn .icon {
+            font-size: 16px;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            min-width: 200px;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s;
+        }
+
+        .login-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 12px 16px;
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-menu a:hover {
+            background: #f8f9fa;
+            color: #e31e24;
+        }
+
+        .dropdown-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Contenedor principal del menú */
+        .main-nav {
+            background-color: #fff;
+            border-bottom: 1px solid #e1e1e1;
+            font-family: 'Arial', sans-serif;
+            position: relative;
+            z-index: 1000;
+        }
+
+        /* Lista horizontal del menú principal */
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Items del menú principal */
+        .nav-menu > li.parent {
+            position: static;
+        }
+
+        .nav-menu > li > a {
+            display: block;
+            padding: 15px 20px;
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu > li > a:hover {
+            color: #0066cc;
+            background-color: #f8f8f8;
+        }
+
+        /* Mega Menú - Ocupa todo el ancho */
+        .megaMenuWrapper {
+            position: absolute;
+            left: 0;
+            right: 0;
+            width: 100vw;
+            background-color: #fff;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            padding: 25px 0;
+            display: none;
+            border-top: 1px solid #e1e1e1;
+            z-index: 999;
+        }
+
+        .parent:hover .megaMenuWrapper {
+            display: block;
+        }
+
+        /* Columnas del mega menú */
+        .mega-columns {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            list-style: none;
+        }
+
+        .mega-columns > li {
+            flex: 1;
+            min-width: 0;
+            padding: 0 15px;
+        }
+
+        /* Títulos de las columnas */
+        .mega-columns > li > strong {
+            display: block;
+            color: #222;
+            font-size: 15px;
+            margin-bottom: 18px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* Items del menú desplegable */
+        .mega-columns ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .mega-columns ul li {
+            margin-bottom: 10px;
+        }
+
+        .mega-columns ul li a {
+            color: #555;
+            text-decoration: none;
+            font-size: 13px;
+            line-height: 1.4;
+            display: block;
+            transition: color 0.2s ease;
+            padding: 3px 0;
+        }
+
+        .mega-columns ul li a:hover {
+            color: #0066cc;
+            text-decoration: underline;
+        }
+
+        /* Botón "Ver Todo" */
+        .ver-todo {
+            text-align: center;
+            padding-top: 15px;
+            margin-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .ver-todo a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+            display: inline-block;
+            padding: 5px 15px;
+            border: 1px solid #0066cc;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .ver-todo a:hover {
+            background-color: #0066cc;
+            color: white;
+        }
+
+        .breadcrumb {
+            background: #f8f9fa;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+
+        .breadcrumb a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        .main-content {
+            padding: 40px 0;
+        }
+
+        .hero-section {
+            display: flex;
+            align-items: center;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 50px;
+            border-radius: 8px;
+            max-width: 1140px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 15px;
+            box-sizing: border-box;
+        }
+
+        .hero-text {
+            max-width: 1140px;
+            background-color: rgba(255,255,255,0.9);
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .hero-highlight {
+            height: 240px;
+			display: flex;
+			flex-direction: column;
+			flex-wrap: nowrap;
+			align-items: flex-start;
+			justify-content: center;
+			align-content: center;
+			position: relative;
+			margin-bottom: 30px;
+            background: url(https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/imagenes/banners/1-cuenta-ahorro-automatico.jpg) no-repeat;
+			background-size: cover;
+            color: #ec111a;
+			font-size: 35px;
+			font-weight: 400;
+			line-height: 38px;
+			margin: 0;
+			padding: 15px 15px;
+			z-index: 5;
+            margin: 0;
+            font-size: 36px;
+            line-height: 1.1;
+            font-weight: 700;
+        }
+
+        .hero-description {
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .hero-image {
+            text-align: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+
+        .benefits-section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            color: #e31e24;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .benefits-list {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .benefits-list li {
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .benefits-list li::before {
+            content: "✓";
+            color: #28a745;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .requirements-section {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 50px;
+        }
+
+        .requirements-list {
+            list-style: none;
+        }
+
+        .requirements-list li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .requirements-list li::before {
+            content: "•";
+            color: #e31e24;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .channels-section {
+            margin-bottom: 50px;
+        }
+
+        .channel-item {
+            margin-bottom: 20px;
+        }
+
+        .channel-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .channel-description {
+            color: #666;
+        }
+
+        .footer {
+            background: #333;
+            color: white;
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 15px;
+            color: #e31e24;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 14px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            color: #ccc;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .copyright {
+            border-top: 1px solid #555;
+            padding-top: 20px;
+            font-size: 12px;
+            color: #ccc;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            
+            .search-box {
+                order: 3;
+                flex-basis: 100%;
+                margin: 0;
+            }
+            
+            .quick-links {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
+            .top-nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .nav-links {
+                gap: 15px;
+            }
+            
+            .hero-section {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+            }
+            
+            .megaMenuWrapper {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+            }
+            
+            .mega-columns {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -84,7 +704,10 @@
                 </div>
             </div>
         </div>
-        <nav class="main-nav">
+    </header>
+
+    <!-- Menú principal con mega menú -->
+    <nav class="main-nav">
             <div class="container">
                 <ul class="nav-menu">
                     <li class="parent">
@@ -420,293 +1043,117 @@
                 </ul>
             </div>
         </nav>
-    </header>
-    <section class="hero-slider">
-        <div class="slides">
-            <div class="slide active">
-                <div class="slide-bg" style="background-image: url('https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/5/Banner-home.jpg')"></div>
-                <div class="container">
-                    <div class="slide-content">
-                        <h1>Ahora tu dinero te dice: Muéveme para que no pierda valor</h1>
-                        <p>Desde hoy, tu plata empieza a moverse. Elige cómo hacerla crecer: sin cobros, ahorrando como quieras o invirtiendo a lo grande</p>
-                        <a href="/cuentas" class="btn btn-primary">Conoce más</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="slide">
-                <div class="slide-bg" style="background-image: url('https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/2025/6/banner-llaves.png')"></div>
-                <div class="container">
-                    <div class="slide-content">
-                        <h1>¡Bre-B Ya está aquí!</h1>
-                        <p>Registra tu Llave en nuestra app y descubre la nueva forma de mover tu dinero: fácil, rápido y seguro.</p>
-                        <a href="/bre-b" class="btn btn-primary">Registra tu Llave</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="slide">
-                <div class="slide-bg" style="background-image: url('https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/2025/4/Banner-home-tc.jpg')"></div>
-                <div class="container">
-                    <div class="slide-content">
-                        <h1>Para cada momento hay una buena tarjeta</h1>
-                        <p>Elige si quieres millas para viajar, cashback al comprar, puntos para canjear, tanquear y más. Las buenas tarjetas Scotiabank Colpatria siempre se recomiendan.</p>
-                        <a href="/tarjetas" class="btn btn-primary">Conoce más</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="slider-controls">
-            <button class="prev-btn">‹</button>
-            <div class="dots">
-                <button class="dot active" data-slide="0"></button>
-                <button class="dot" data-slide="1"></button>
-                <button class="dot" data-slide="2"></button>
-            </div>
-            <button class="next-btn">›</button>
-        </div>
-    </section>
-    <section class="products-section">
+
+    <div class="breadcrumb">
         <div class="container">
-            <div class="tabs">
-                <button class="tab-btn active" data-tab="destacados">Destacados</button>
-                <button class="tab-btn" data-tab="tarjetas">Tarjetas de crédito</button>
-                <button class="tab-btn" data-tab="cuentas">Cuentas e Inversión</button>
-            </div>
-
-            <div class="tab-content active" id="destacados">
-                <div class="products-grid">
-                    <div class="product-card">
-                        <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/imagenes/box/home/box-ahorrar-te-cambia.jpg" alt="Cuenta de ahorros">
-                        <h3>Ahorrar te cambia</h3>
-                        <p>Solicita tu cuenta de ahorros y paga $0 por cuota de manejo retiros y transacciones.</p>
-                        <a href="/cuenta-ahorros" class="btn btn-outline">Más información</a>
-                    </div>
-
-                    <div class="product-card">
-                        <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/imagenes/tarjetas/box-light-tarjeta-sin-cuota-manejo.jpg" alt="Tarjeta One Light">
-                        <h3>Tarjeta de Crédito One Light</h3>
-                        <p>La tarjeta de crédito con $0 de cuota de manejo siempre. Recibe tu extracto totalmente digital.</p>
-                        <a href="/tarjeta-light" class="btn btn-outline">Solicitar</a>
-                    </div>
-
-                    <div class="product-card">
-                        <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/imagenes/box/home/box-seguro.jpg" alt="Seguros">
-                        <h3>Seguros</h3>
-                        <p>Siéntete tranquilo con nuestro amplio portafolio de seguros para proteger todo lo que más quieres.</p>
-                        <a href="/seguros" class="btn btn-outline">Cotizar</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tab-content" id="tarjetas">
-                <div class="products-grid">
-                    <div class="product-card">
-                        <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/tarjetas-de-credito/One_Cashback_.jpg" alt="One Cashback">
-                        <h3>One Cashback</h3>
-                        <p>Recibe de vuelta el 5% de esos pagos que haces una y otra vez</p>
-                        <a href="/cashback" class="btn btn-outline">Solicitar</a>
-                    </div>
-
-                    <div class="product-card">
-                        <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/tarjetas-de-credito/Cencosud_.jpg" alt="Cencosud">
-                        <h3>Cencosud</h3>
-                        <p>Descuentos permanentes y exclusivos en Jumbo, Easy y Metro los 365 días del año</p>
-                        <a href="/cencosud" class="btn btn-outline">Solicitar</a>
-                    </div>
-
-                    <div class="product-card">
-                        <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/imagenes/tarjetas/terpel-gold.png" alt="Terpel">
-                        <h3>Terpel</h3>
-                        <p>Recibe el doble de puntos en las estaciones de servicio Terpel, Gazel, Altoque y Sbarro.</p>
-                        <a href="/terpel" class="btn btn-outline">Solicitar</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tab-content" id="cuentas">
-                <div class="products-grid">
-                    <div class="product-card">
-                        <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/imagenes/box/Box5.png" alt="Cuenta de ahorros">
-                        <h3>Cuenta de ahorros</h3>
-                        <p>Una cuenta de ahorros que no te cobra cuota de manejo y cuida tu dinero para que lo uses en lo que quieras.</p>
-                        <a href="/cuenta-ahorros" class="btn btn-outline">Abrir cuenta</a>
-                    </div>
-
-                    <div class="product-card">
-                        <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/imagenes/box/home/cdt.jpg" alt="CDT">
-                        <h3>¡Nuestro CDT te acerca a tus metas!</h3>
-                        <p>Abre tu CDT desde $500.000 y recibe rendimientos con excelentes tasas de interés.</p>
-                        <a href="/cdt" class="btn btn-outline">Invertir</a>
-                    </div>
-
-                    <div class="product-card">
-                        <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/imagenes/box/la-mejor-cuenta-nomina.jpg" alt="Cuenta nómina">
-                        <h3>Cuenta de nómina</h3>
-                        <p>Con nuestra cuenta de nómina Scotiabank Colpatria, ¡Sí eres Libre! Disfruta de múltiples beneficios.</p>
-                        <a href="/cuenta-nomina" class="btn btn-outline">Solicitar</a>
-                    </div>
-                </div>
-            </div>
+            <a href="#">Tarjetas de Crédito</a> > <a href="#">Compra de cartera</a> > <a href="#">Información general</a>
         </div>
-    </section>
-    <section class="services-section">
+    </div>
+
+    <main class="main-content">
         <div class="container">
-            <div class="services-grid">
-                <div class="service-card">
-                    <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/imagenes/box/home/alianzas.jpg" alt="Alianzas">
-                    <h3>Alianzas</h3>
-                    <p>Tenemos ofertas y descuentos con grandes marcas para que ahorres mientras disfrutas.</p>
-                    <a href="/alianzas" class="btn-link">Ver más →</a>
+            <section class="hero-section">
+                <div class="hero-text">
+                    <h1>Compra de cartera para unificar deudas con tarjetas de crédito</h1>
+                    <div class="hero-highlight">
+                        Unifica todas tus deudas de otros 
+                        <br>
+                        bancos
+                    </div>
+                    <p class="hero-description">Compra de Cartera o Unificación de deudas qué consiste en trasladar la(s) deuda(s) que tenga con otras entidades y unificarlas en su tarjeta de crédito Scotiabank Colpatria al plazo que elija y a una tasa de interés más baja respecto a la tasa de compras que usted maneja.</p>
+                </div>
+            </section>
+
+            <section class="benefits-section">
+                <h2 class="section-title">Beneficios de tu compra de cartera</h2>
+                <p style="margin-bottom: 20px;">Con tu crédito para Unificación de Deudas tienes beneficios como los siguientes:</p>
+                
+                <ul class="benefits-list">
+                    <li>Plazo fijo durante la vigencia de la compra de cartera.</li>
+                    <li>Descuentos automáticos de débito por el límite de cupo disponible que tiene la tarjeta de Scotiabank Colpatria.</li>
+                    <li>Ya no pagas 14, 24, 36 o 60 meses</li>
+                    <li>Proteges con una póliza de seguro de vida deudor que cubre el 100% del saldo de la deuda en caso de fallar o de incapacidad total permanente.</li>
+                </ul>
+            </section>
+
+            <section class="requirements-section">
+                <h2 class="section-title">Requisitos de Compra de Cartera con Tarjeta de Crédito</h2>
+                <ul class="requirements-list">
+                    <li>La TC Scotiabank Colpatria debe estar en estado Normal y Vigente.</li>
+                    <li>Para Oficinas se necesita el Formulario de Unificación de deudas debidamente diligenciado.</li>
+                    <li>Para Canales Digitales se necesita certificar que la deuda se encuentra activa a nombre del titular.</li>
+                    <li>Más información: Reglamento de productos</li>
+                    <li>*Consulta las tasas y tarifas</li>
+                </ul>
+            </section>
+
+            <section class="channels-section">
+                <h2 class="section-title">Canales disponibles para realizar Compra de Cartera</h2>
+                
+                <div class="channel-item">
+                    <h3 style="color: #e31e24; margin-bottom: 10px;">Oficinas Scotiabank Colpatria</h3>
+                    <p>Acércate a cualquiera de nuestras oficinas Scotiabank Colpatria más cercana y realiza tu compra de cartera en las cajas de las oficinas.</p>
                 </div>
 
-                <div class="service-card">
-                    <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/imagenes/box/home/ayuda.jpg" alt="Centro de ayuda">
-                    <h3>¿Necesitas ayuda?</h3>
-                    <p>En nuestro centro de ayuda encontrarás respuestas a tus preguntas frecuentes.</p>
-                    <a href="/ayuda" class="btn-link">Ver más →</a>
+                <div class="channel-item">
+                    <h3 class="channel-title">Banca Virtual</h3>
+                    <p class="channel-description">Accede a tu banca virtual y realiza tu compra de cartera de manera fácil y segura desde cualquier lugar.</p>
                 </div>
 
-                <div class="service-card">
-                    <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/imagenes/box/home/box-fiducia.jpg" alt="Fiduciaria">
-                    <h3>Fiduciaria</h3>
-                    <p>Te ayudamos a lograr tus objetivos de inversión con nuestro portafolio de productos.</p>
-                    <a href="/fiduciaria" class="btn-link">Ver más →</a>
+                <div class="channel-item">
+                    <h3 class="channel-title">Línea de Atención</h3>
+                    <p class="channel-description">Comunícate a nuestras líneas de Atención Scotiabank Colpatria y realiza tu compra de cartera con un asesor en línea.</p>
                 </div>
-
-                <div class="service-card">
-                    <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/imagenes/box/home/oferta-de-bienes.jpg" alt="Oferta de bienes">
-                    <h3>Oferta de bienes</h3>
-                    <p>Conoce nuestra amplia oferta de propiedades, apartamentos, casas y automóviles.</p>
-                    <a href="/bienes" class="btn-link">Ver más →</a>
-                </div>
-
-                <div class="service-card">
-                    <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/imagenes/box/home/securities.jpg" alt="Scotia Securities">
-                    <h3>Scotia Securities</h3>
-                    <p>Conoce todo el portafolio de productos para hacer tus inversiones con total respaldo.</p>
-                    <a href="/securities" class="btn-link">Ver más →</a>
-                </div>
-
-                <div class="service-card">
-                    <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/imagenes/box/home/certificaciones.jpg" alt="Extractos">
-                    <h3>Extractos y certificaciones</h3>
-                    <p>Obtén tus certificados y paz y salvos totalmente gratis a través de nuestra banca virtual.</p>
-                    <a href="/certificados" class="btn-link">Ver más →</a>
-                </div>
-
-                <div class="service-card">
-                    <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/2022/08/economia-box-home.jpg" alt="Educación financiera">
-                    <h3>¡Aprende con EconoMÍA!</h3>
-                    <p>Descubre la plataforma de educación financiera de Scotiabank Colpatria.</p>
-                    <a href="/educacion" class="btn-link">Ver más →</a>
-                </div>
-
-                <div class="service-card">
-                    <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/2023/07/criminalMENTE_Box.jpg" alt="Seguridad">
-                    <h3>Detecta las #SeñalesDeALERTA</h3>
-                    <p>Mantente un paso adelante de los estafadores y NO caigas en fraudes financieros.</p>
-                    <a href="/seguridad" class="btn-link">Ver más →</a>
-                </div>
-            </div>
+            </section>
         </div>
-    </section>
-    <section class="indicators-section">
-        <div class="container">
-            <h2>Indicadores económicos</h2>
-            <div class="indicators-grid">
-                <div class="indicator">
-                    <div class="indicator-icon">💵</div>
-                    <div class="indicator-name">Dólar - TRM</div>
-                    <div class="indicator-value">$4,003.90</div>
-                </div>
-                <div class="indicator">
-                    <div class="indicator-icon">🌍</div>
-                    <div class="indicator-name">Euro</div>
-                    <div class="indicator-value">$4,681.96</div>
-                </div>
-                <div class="indicator">
-                    <div class="indicator-icon">☕</div>
-                    <div class="indicator-name">Café</div>
-                    <div class="indicator-value">US$ 3.18</div>
-                </div>
-                <div class="indicator">
-                    <div class="indicator-icon">📊</div>
-                    <div class="indicator-name">WTI</div>
-                    <div class="indicator-value">US$ 68.55</div>
-                </div>
-                <div class="indicator">
-                    <div class="indicator-icon">📈</div>
-                    <div class="indicator-name">UVR</div>
-                    <div class="indicator-value">$392.42</div>
-                </div>
-                <div class="indicator">
-                    <div class="indicator-icon">💰</div>
-                    <div class="indicator-name">DTF semana</div>
-                    <div class="indicator-value">8.82%</div>
-                </div>
-            </div>
-        </div>
-    </section>
+    </main>
+
     <footer class="footer">
-        <div class="footer-cta">
-            <div class="container">
-                <div class="cta-content">
-                    <div class="cta-icon">🏠</div>
-                    <h3>¡Explora nuestros productos!</h3>
-                    <p>Más soluciones para ti.</p>
-                    <a href="/productos" class="cta-link">Conócelas aquí</a>
-                </div>
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 30px;">
+                <h3>¡Explora nuestros productos!</h3>
+                <p>Más soluciones para ti</p>
+                <a href="#" style="color: #e31e24; text-decoration: none;">Conocelos aquí</a>
             </div>
-        </div>
-        <div class="footer-social">
-            <div class="container">
+
+            <div style="text-align: center; margin-bottom: 30px;">
                 <p>Encuéntranos en nuestras redes sociales</p>
                 <div class="social-links">
-                    <a href="https://facebook.com/scotiabankcolpatria" aria-label="Facebook">📘</a>
-                    <a href="https://twitter.com/scotiacolpatria" aria-label="Twitter">❌</a>
-                    <a href="https://youtube.com/scotiabankcolpatria" aria-label="YouTube">📺</a>
-                    <a href="https://linkedin.com/company/scotiabank-colpatria" aria-label="LinkedIn">💼</a>
-                    <a href="https://instagram.com/scotiabankcolpatria" aria-label="Instagram">📷</a>
-                </div>
-                <div class="supervision">
-                    <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/imagenes/logos/vigilado-s.png" 
-                         alt="Superintendencia Financiera de Colombia">
+                    <a href="#">📘</a>
+                    <a href="#">🐦</a>
+                    <a href="#">📺</a>
+                    <a href="#">📷</a>
                 </div>
             </div>
-        </div>
-        <div class="footer-links">
-            <div class="container">
-                <div class="links-grid">
-                    <a href="/productos-servicios">Información sobre productos y servicios</a>
-                    <a href="/consumidor-financiero">Consumidor Financiero</a>
-                    <a href="/educacion-financiera">Educación Financiera</a>
-                    <a href="/seguridad">Recomendaciones de Seguridad</a>
-                    <a href="/politica-cobro">Política de gestión de cobro</a>
-                    <a href="/politica-proveedores">Política proveedores</a>
-                    <a href="/politica-datos">Política protección de datos</a>
-                    <a href="/compensacion">Política de compensación</a>
-                    <a href="/fatca">FATCA</a>
-                    <a href="/habeas-data">Habeas Data</a>
-                    <a href="/defensor-consumidor">Defensoría del consumidor</a>
-                    <a href="/reglamentos">Reglamento general de productos</a>
-                    <a href="/tasas-tarifas">Tasas y tarifas</a>
-                    <a href="/formatos">Formatos</a>
-                    <a href="/actualizacion-datos">Actualización de datos</a>
-                    <a href="/superintendencia">Superintendencia</a>
-                    <a href="/terminos-condiciones">Términos y Condiciones</a>
-                    <a href="/quejas-reclamos">Quejas y Reclamos</a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <p>© 2025 - ® Marca registrada de The Bank of Nova Scotia, utilizada bajo licencia.</p>
-            </div>
-        </div>
-        <button class="back-to-top" aria-label="Volver arriba">↑</button>
-    </footer>
 
-    <script src="script.js"></script>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Información general</h4>
+                    <a href="#">Oficinas y horarios</a>
+                    <a href="#">Directorio Financiero</a>
+                    <a href="#">Defensor Financiero</a>
+                    <a href="#">Corresponsales Bancarios</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Transparencia</h4>
+                    <a href="#">Política de conflictos de interés</a>
+                    <a href="#">Tarifas</a>
+                    <a href="#">Política de sostenibilidad</a>
+                    <a href="#">Seguridad</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Regulaciones</h4>
+                    <a href="#">Reglamento de productos</a>
+                    <a href="#">Política de protección de datos</a>
+                    <a href="#">Términos y condiciones</a>
+                    <a href="#">Defensa del consumidor</a>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>© 2023 ● Marca registrada de The Bank of Nova Scotia, utilizada bajo licencia.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

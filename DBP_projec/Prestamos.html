@@ -380,164 +380,167 @@
             font-weight: 600;
         }
 
-        .masthead {
-        text-align: center;
-        margin-bottom: 2rem;
-        }
-
-        .masthead-title {
-        	color: #fff;
-            font-size: 31px;
-            font-weight: 700;
-            line-height: 38px;
+        .scb-root {
+            font-family: 'Scotia', 'Scotia-Headline', Arial, sans-serif;
             margin: 0;
-            width: 50%;
-            padding: 15px 50px;
-            background-size: auto 100%;
-            position: relative;
-            z-index: 5;
-        }
-
-        .masthead-subtitle {
-            color: #fff;
-            font-size: 18px;
-            font-weight: 400;
-            line-height: 24px;
-            margin: 0;
-            padding: 30px 50px;
-            width: 40%;
-            position: relative;
-            z-index: 5;
-            text-align: start;
-        }
-
-        .credit-description {
-        width: 94%;
-        margin-left: 3%;
-        margin-right: 3%;
-        font-size: 17px;
-        color: #666666;
-        }
-
-        /* Botón CTA */
-        .pc--cta {
-        background-color: #7849b8;
-        border-color: #7849b8;
-        width: 20%;
-        }
-
-        a.pc--cta:hover,
-        a.pc--cta:focus {
-        color: #fff;
-        background-color: #8230DF;
-        border-color: #8230DF;
-        text-decoration: none;
-        }
-
-        /* Sección colapsable */
-        .splitCollapsible {
-        float: left;
-        width: 100%;
-        }
-
-        .splitCollapsible.open > h2:first-child {
-        border-bottom: 2px solid #7849b8;
-        color: #7849b8;
-        }
-
-        /* Botón solicitud */
-        .productApplicationCTA {
-        float: left;
-        }
-
-        .btn-pill {
-        margin-left: 45px;
-        padding: 14px 30px;
-        border: 1px solid currentColor;
-        border-radius: 50px;
-        }
-        .btn-background {
+            padding: 0;
             color: #333333;
-            background: #fff;
-            border-color: transparent;
+            line-height: 1.4;
+            background-color: #ffffff;
         }
-        .btn {
+        
+        .scb-container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Secciones de crédito */
+        .scb-credit-section {
+            padding: 80px 0;
+            text-align: center;
             position: relative;
-            display: inline-block;
-            font-size: 16px;
+            border-bottom: 1px solid #eeeeee;
+        }
+        
+        .scb-section-divider {
+            color: #e9111a;
+            font-size: 40px;
+            font-weight: bold;
+            margin: 30px 0;
+            line-height: 0;
+        }
+        
+        /* Tipografía específica Scotiabank */
+        .scb-main-heading {
+            font-size: 36px;
+            color: #e9111a;
             font-weight: 700;
-            box-sizing: border-box;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        
+        .scb-sub-heading {
+            font-size: 28px;
+            color: #333333;
+            margin-bottom: 30px;
+            font-weight: 400;
+            line-height: 1.3;
+        }
+        
+        .scb-question-text {
+            font-size: 24px;
+            color: #e9111a;
+            font-weight: 700;
+            margin-bottom: 25px;
+            line-height: 1.3;
+        }
+        
+        .scb-answer-text {
+            font-size: 22px;
+            color: #333333;
+            margin-bottom: 40px;
+            font-weight: 400;
+            line-height: 1.4;
+        }
+        
+        .scb-highlight-box {
+            font-size: 20px;
+            color: #e9111a;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin: 50px 0;
+            line-height: 1.5;
+            letter-spacing: 0.5px;
+        }
+        
+        .scb-feature-desc {
+            font-size: 20px;
+            color: #333333;
+            margin: 35px 0;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+        
+        /* Elementos gráficos */
+        .scb-person-img {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 30px auto;
+            border: 5px solid #f5f5f5;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        /* Botones y CTAs */
+        .scb-primary-btn {
+            display: inline-block;
+            padding: 16px 42px;
+            background-color: #e9111a;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 700;
+            margin: 25px 12px;
+            transition: all 0.3s ease;
+            border: none;
             cursor: pointer;
         }
-
-
-
-        /* Masthead (banner principal) */
-        .masthead {
-        height: 350px;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        position: relative;
-        margin-bottom: 30px;
-        background: url(https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/imagenes/vehiculos/Banner_Home_Vehiculos_6.png) no-repeat;
-        background-size: cover;
+        
+        .scb-primary-btn:hover {
+            background-color: #c00e16;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(233,17,26,0.2);
         }
-
-        .masthead-title {
-        color: #fff;
-        font-size: 31px;
-        font-weight: 700;
-        line-height: 38px;
-        margin: 0;
-        width: 50%;
-        z-index: 5;
-        text-align: start;
+        
+        .scb-cta-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333333;
+            margin: 40px 0 30px;
         }
-
-        .masthead-text {
-        color: #fff;
-        font-size: 18px;
-        font-weight: 400;
-        line-height: 24px;
-        margin: 0;
-        width: 40%;
-        z-index: 5;
-        }
-
-        /* Descripción debajo del banner */
-        .promo-description {
-        width: 94%;
-        margin: 0 auto;
-        }
-
-        .promo-description span {
-        color: #666;
-        font-size: 17px;
-        }
-
-        /* Botón rojo adicional */
-        .hub-red-btn {
-        background-color: #D81E05;
-        border: 0.75px solid #e3173e;
-        border-radius: 4px;
-        text-decoration: none;
-        box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
-        color: #fff;
-        font-size: 14px;
-        font-weight: 700;
-        padding: 5px 19px;
-        display: inline-block;
-        text-align: center;
-        background-image: linear-gradient(to top, #c4180c 0%, #ed260c 100%);
-        }
-
-        .hub-red-btn.large {
-        font-size: 16px;
-        padding: 10px 28px;
-        margin-left: 15px;
+        
+        /* Ajustes responsive */
+        @media (max-width: 768px) {
+            .scb-credit-section {
+                padding: 60px 0;
+            }
+            
+            .scb-main-heading {
+                font-size: 28px;
+            }
+            
+            .scb-sub-heading {
+                font-size: 22px;
+            }
+            
+            .scb-question-text {
+                font-size: 20px;
+            }
+            
+            .scb-answer-text, .scb-feature-desc {
+                font-size: 18px;
+            }
+            
+            .scb-highlight-box {
+                font-size: 16px;
+            }
+            
+            .scb-person-img {
+                width: 220px;
+                height: 220px;
+            }
+            
+            .scb-primary-btn {
+                padding: 14px 32px;
+                font-size: 16px;
+            }
+            
+            .scb-cta-title {
+                font-size: 20px;
+            }
         }
 
         .footer {
@@ -645,6 +648,7 @@
         }
     </style>
 </head>
+
 <body>
     <header class="header">
         <div class="header-top">
@@ -894,7 +898,7 @@
                     </li>
 
                     <li class="parent">
-                        <a href="/personas/prestamos" data-overlaytext="Préstamos">Préstamos</a>
+                        <a href="Prestamos.html" data-overlaytext="Préstamos">Préstamos</a>
                         <div class="megaMenuWrapper">
                             <ul class="mega-columns">
                                 <li class="parent">
@@ -1057,32 +1061,86 @@
                     </li>
                 </ul>
             </div>
-        </nav>
+    </nav>
 
     <div class="breadcrumb">
         <div class="container">
-            <a href="index.html">Personas</a> > <a href="Prestamos.html">Prestamos</a> > <a href="#">Sin garantía</a> > <a href="credito_por_vehiculo.html">Crédito por Vehiculo</a>
+            <a href="index.html">Personas</a> > <a href="Prestamos.html">Prestamos</a>
         </div>
     </div>
 
-    <main id="content" class="default">
-    <div id="content-body" class="containerCont">
-
-        <div class="masthead">
-        <h2 class="masthead-title">Tú lo escoges, nosotros lo financiamos</h2>
-        <p class="masthead-subtitle">Vehículos de servicio público y particular&nbsp;.</p>
-        <a class="btn btn-pill btn-background" href="#" target="_self">Solicítalo ya</a>
-        </div>
-
-        <div class="credit-description">
-        <span>Cumple tu sueño de tener auto propio con Scotiabank Colpatria, y lo mejor de todo no necesitas prendar tu carro, solicita tu crédito de libre inversión.</span>
-        </div>
-
-        <section id="tileMain">
-        <!-- contenido adicional aquí -->
+<main>
+        <!-- Sección 1: Pregunta principal -->
+        <section class="scb-credit-section">
+            <div class="scb-container">
+                <h1 class="scb-main-heading">¿Qué es el crédito perfecto para ti</h1>
+                <p class="scb-sub-heading">libre inversión o rotativo?</p>
+            </div>
         </section>
-
-    </div>
+        
+        <!-- Sección 2: Libre inversión -->
+        <section class="scb-credit-section">
+            <div class="scb-container">
+                <p class="scb-question-text">¿Necesitas planificar el viaje que siempre<br>soñaste?</p>
+                <p class="scb-answer-text">El crédito de libre inversión será perfecto para ti.</p>
+                <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/2024/9/consumo/banner-home-1.jpg" alt="Persona sonriendo" class="scb-person-img">
+                <div class="scb-section-divider">></div>
+            </div>
+        </section>
+        
+        <!-- Sección 3: Crédito rotativo -->
+        <section class="scb-credit-section">
+            <div class="scb-container">
+                <p class="scb-question-text">¿Te quedaste sin flujo de dinero a<br>último momento y tienes que pagar<br>los servicios de tu local?</p>
+                <p class="scb-answer-text">Un crédito rotativo será tu solución.</p>
+                <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/2024/9/consumo/banner-home-2.jpg" alt="Persona trabajando" class="scb-person-img">
+                <div class="scb-section-divider">></div>
+            </div>
+        </section>
+        
+        <!-- Sección 4: Consumo responsable -->
+        <section class="scb-credit-section">
+            <div class="scb-container">
+                <p class="scb-highlight-box">
+                    EL CONSUMO RESPONSABLE DE CRÉDITOS ES BUENO PARA TU<br>
+                    SALUD FINANCIERA. EN SCOTIABANK COLPATRIA TE ASESORAMOS<br>
+                    PARA QUE ELIJAS EL CRÉDITO PERFECTO PARA TI.
+                </p>
+                <div class="scb-section-divider">></div>
+            </div>
+        </section>
+        
+        <!-- Sección 5: Beneficios -->
+        <section class="scb-credit-section">
+            <div class="scb-container">
+                <p class="scb-feature-desc">
+                    El crédito de libre inversión lo puedes usar para lo que quieras,<br>
+                    sin codeudor y ajustar las cuotas como tú quieras.
+                </p>
+                <p class="scb-feature-desc">
+                    Con el crédito rotativo cuentas con un cupo inicial que se renueva<br>
+                    al abonar a la deuda para que siempre tengas flujo de dinero.
+                </p>
+                <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/2024/9/consumo/banner-home-3.jpg" alt="Persona feliz" class="scb-person-img">
+                <div class="scb-section-divider">></div>
+            </div>
+        </section>
+        
+        <!-- Sección CTA Final -->
+        <section class="scb-credit-section" style="border-bottom: none;">
+            <div class="scb-container">
+                <p class="scb-feature-desc">
+                    Ahora que sabes la diferencia entre un crédito<br>
+                    rotativo y uno de libre inversión, podrás tener un<br>
+                    consumo responsable.
+                </p>
+                <p class="scb-cta-title">¡No lo dudes más, solicítalos ahora!</p>
+                <div>
+                    <a href="#" class="scb-primary-btn">¡Quiero mi rotativo!</a>
+                    <a href="#" class="scb-primary-btn">¡Quiero mi libre inversión!</a>
+                </div>
+            </div>
+        </section>
     </main>
 
 

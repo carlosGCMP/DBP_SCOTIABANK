@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Finalizamos alianzas compartidas! - Scotiabank Colpatria</title>
+    <style>
+           :root {
+    --primary-red: #ec111a;
+    --dark-red: #c01a1f;
+    --secondary-green: #14846b;
+    --dark-green: #0e6d55;
+    --text-dark: #333333;
+    --text-light: #666666;
+    --text-muted: #999999;
+    --bg-light: #f8f9fa;
+    --border-light: #e0e0e0;
+    --white: #ffffff;
+    --shadow: 0 2px 10px rgba(0,0,0,0.1);
+    --shadow-hover: 0 8px 25px rgba(0,0,0,0.15);
+    --border-radius: 8px;
+    --transition: all 0.3s ease;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background: var(--white);
+    box-shadow: var(--shadow);
+
+    top: 0;
+    z-index: 1000;
+}
+
+.header-top {
+    background: var(--bg-light);
+    border-bottom: 1px solid var(--border-light);
+    padding: 8px 0;
+    font-size: 13px;
+}
+
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-light);
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary-red);
+    font-weight: 500;
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -9px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary-red);
+}
+
+.header-main {
+    padding: 15px 0;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+}
+
+.search-box {
+    flex: 1;
+    max-width: 400px;
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 50px 12px 20px;
+    border: 1px solid var(--border-light);
+    border-radius: 25px;
+    background: var(--bg-light);
+    transition: var(--transition);
+    font-size: 14px;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--primary-red);
+    background: var(--white);
+    box-shadow: 0 0 0 3px rgba(236, 17, 26, 0.1);
+}
+
+.search-btn {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-light);
+    transition: var(--transition);
+}
+
+.search-btn:hover {
+    color: var(--primary-red);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.quick-links {
+    display: flex;
+    gap: 15px;
+}
+
+.quick-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 12px;
+    padding: 8px;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.quick-link:hover {
+    color: var(--primary-red);
+    background: rgba(236, 17, 26, 0.1);
+}
+
+.quick-link .icon {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.quick-link.pse {
+    background: #f0f8ff;
+    color: #0066cc;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+.login-dropdown {
+    position: relative;
+}
+
+.login-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: var(--primary-red);
+    color: var(--white);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.login-btn:hover {
+    background: var(--dark-red);
+    transform: translateY(-2px);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--white);
+    min-width: 250px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-hover);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: var(--transition);
+    z-index: 100;
+}
+
+.login-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 12px 20px;
+    color: var(--text-dark);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border-light);
+    transition: var(--transition);
+}
+
+.dropdown-menu a:hover {
+    background: var(--bg-light);
+    color: var(--primary-red);
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--text-dark);
+    transition: var(--transition);
+}
+
+/* Contenedor principal del menú */
+.main-nav {
+    background-color: #fff;
+    border-bottom: 1px solid #e1e1e1;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+    z-index: 1000;
+}
+
+/* Contenedor para centrar el contenido */
+.main-nav .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Lista horizontal del menú principal */
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+/* Items del menú principal */
+.nav-menu > li.parent {
+    position: static; /* Cambiado para que el mega menú se alinee con el viewport */
+}
+
+.nav-menu > li > a {
+    display: block;
+    padding: 15px 20px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.nav-menu > li > a:hover {
+    color: #0066cc;
+    background-color: #f8f8f8;
+}
+
+/* Mega Menú - Ocupa todo el ancho */
+.megaMenuWrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    padding: 25px 0;
+    display: none;
+    border-top: 1px solid #e1e1e1;
+}
+
+.parent:hover .megaMenuWrapper {
+    display: block;
+}
+
+/* Columnas del mega menú */
+.mega-columns {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    list-style: none;
+}
+
+.mega-columns > li {
+    flex: 1;
+    min-width: 0;
+    padding: 0 15px;
+}
+
+/* Títulos de las columnas */
+.mega-columns > li > strong {
+    display: block;
+    color: #222;
+    font-size: 15px;
+    margin-bottom: 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Items del menú desplegable */
+.mega-columns ul {
+    list-style: none;
+}
+
+.mega-columns ul li {
+    margin-bottom: 10px;
+}
+
+.mega-columns ul li a {
+    color: #555;
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 1.4;
+    display: block;
+    transition: color 0.2s ease;
+    padding: 3px 0;
+}
+
+.mega-columns ul li a:hover {
+    color: #0066cc;
+    text-decoration: underline;
+}
+
+/* Botón "Ver Todo" */
+.ver-todo {
+    text-align: center;
+    padding-top: 15px;
+    margin-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.ver-todo a {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    display: inline-block;
+    padding: 5px 15px;
+    border: 1px solid #0066cc;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.ver-todo a:hover {
+    background-color: #0066cc;
+    color: white;
+}
+
+        /* === AQUÍ VA TU CSS DEL HEADER === */
+        .header-placeholder {
+            background: #e60012;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-weight: bold;
+            border: 2px dashed #fff;
+            margin: 10px;
+        }
+
+        /* Contenido principal */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 40px 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            color: #e60012;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 30px 0;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .alliance-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid #e60012;
+        }
+
+        .alliance-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            color: #e60012;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .card-title a {
+            color: #e60012;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .card-title a:hover {
+            color: #b8000f;
+            text-decoration: underline;
+        }
+
+        .card-description {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .important-notice {
+            background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .important-title {
+            color: #856404;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .important-text {
+            color: #856404;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .benefits-link {
+            display: inline-block;
+            background: #e60012;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            margin-top: 15px;
+            transition: background 0.3s ease, transform 0.3s ease;
+            font-weight: 500;
+        }
+
+        .benefits-link:hover {
+            background: #b8000f;
+            transform: translateY(-2px);
+        }
+
+        .final-message {
+            text-align: center;
+            margin: 60px 0 40px;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #e60012, #b8000f);
+            color: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(230,0,18,0.3);
+        }
+
+        .final-message h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .disclaimer {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 40px;
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+/* Footer */
+.footer {
+    background: var(--text-dark);
+    color: var(--white);
+    position: relative;
+}
+
+.footer-cta {
+    background: var(--white);
+    color: var(--text-dark);
+    padding: 40px 0;
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.cta-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.cta-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--primary-red);
+}
+
+.cta-content p {
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+.cta-link {
+    color: var(--primary-red);
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.footer-social {
+    background: var(--bg-light);
+    color: var(--text-dark);
+    padding: 30px 0;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.social-links a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    transform: scale(1.2);
+}
+
+.supervision {
+    margin-top: 20px;
+}
+
+.supervision img {
+    height: 40px;
+}
+
+.footer-links {
+    padding: 30px 0;
+}
+
+.links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.links-grid a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 12px;
+    transition: var(--transition);
+    padding: 5px 0;
+}
+
+.links-grid a:hover {
+    color: var(--white);
+}
+
+.footer-bottom {
+    border-top: 1px solid #555;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary-red);
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    z-index: 1000;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background: var(--dark-red);
+    transform: translateY(-3px);
+}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <nav class="top-nav">
+                    <ul class="nav-links">
+                        <li><a href="/" class="active">Inicio</a></li>
+                        <li><a href="momentos.html">Momentos</a></li>
+                        <li><a href="bussines.html">Business</a></li>
+                        <li><a href="Empresas.html">Empresas</a></li>
+                        <li><a href="/corporativo">Corporativo</a></li>
+                    </ul>
+                    <ul class="nav-links nav-right">
+                        <li><a href="/acerca-de">Acerca de</a></li>
+                        <li><a href="/cajeros">Cajeros</a></li>
+                        <li><a href="/contacto">Trabaja con nosotros</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <img src="https://cdn.aglty.io/scotiabank-colombia/Global-Rebrand/logo-site-2.png" 
+                             alt="Scotiabank Colpatria" class="logo-img">
+                    </div>
+                    <div class="search-box">
+                        <input type="text" placeholder="Empieza tu búsqueda" class="search-input">
+                        <button type="button" class="search-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="header-actions">
+                        <div class="quick-links">
+                            <a href="/corresponsales" class="quick-link">
+                                <span class="icon">🏪</span>
+                                <span>Corresponsales</span>
+                            </a>
+                            <a href="/oficinas" class="quick-link">
+                                <span class="icon">📍</span>
+                                <span>Oficinas</span>
+                            </a>
+                            <a href="/contacto" class="quick-link">
+                                <span class="icon">📞</span>
+                                <span>Contáctanos</span>
+                            </a>
+                            <a href="/pse" class="quick-link pse">
+                                <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/imagenes/iconos/pagos-pse.jpg">
+                                <span>PSE</span>
+                            </a>
+                        </div>
+                        <div class="login-dropdown">
+                            <button class="login-btn">
+                                <span class="icon">👤</span>
+                                Ingresar
+                            </button>
+                            <div class="dropdown-menu">
+                                <a href="/banca-virtual">Banca Virtual Personas</a>
+                                <a href="/banca-empresarial">Banca Virtual Empresarial</a>
+                                <a href="/scotia-connect">ScotiaConnect</a>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="mobile-menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <div class="container">
+                <ul class="nav-menu">
+                    <li class="parent">
+                        <a href="tarjeta-credito/tarjeta-credito.html">Tarjetas de Crédito</a>
+                        <div class="megaMenuWrapper">
+                            <ul class="mega-columns">
+                                <li class="parent">
+                                    <strong>TARJETAS ONE</strong>
+                                    <ul>
+                                        <li><a href="tarjeta-credito/one-rewards/tarjetas-one-rewards.html">Tarjetas One Rewards</a></li>
+                                        <li><a href="tarjeta-credito/one-rewards/one-rewards-metal.html">One Rewards Metal</a></li>
+                                        <li><a href="tarjeta-credito/one-rewards/one-rewards-classic.html">One Rewards Classic</a></li>
+                                        <li><a href="tarjeta-credito/one-rewards/one-rewards-gold.html">One Rewards Gold</a></li>
+                                        <li><a href="tarjeta-credito/one-rewards/one-rewards-black.html">One Rewards Black</a></li>
+                                        <li><a href="tarjeta-credito/one-rewards/one-rewards-black-american-express.html">One Rewards Black American Express</a></li>
+                                        <li><a href="tarjeta-credito/one-rewards/one-rewards-platinum.html">One Rewards Platinum</a></li>
+                                        <li><a href="tarjeta-credito/one-rewards/one-rewards-signature.html">One Rewards Signature</a></li>
+                                        <li><a href="tarjeta-credito/one-rewards/one-rewards-infinite.html">One Rewards Infinite</a></li>
+                                        <li><a href="tarjeta-credito/one-rewards/one-rewards-light.html">One Light</a></li>
+                                        <li><a href="tarjeta-credito/one-rewards/one-cashback.html">One Cashback</a></li>
+                                    </ul>
+                                </li>
+                                <li class="parent">
+                                    <strong>ESPECIALIZADAS</strong>
+                                    <ul>
+                                        <li><a href="tarjeta-credito/especializadas/visa-avanza-lifemiles.html">Visa avanza lifemiles</a></li>
+                                        <li><a href="tarjeta-credito/especializadas/tarjetas-advantage.html">Tarjetas AAdvantage</a></li>
+                                        <li><a href="tarjeta-credito/especializadas/tarjeta-vibe-terpel.html">Tarjeta VivaTerpel</a></li>
+                                        <li><a href="tarjeta-credito/especializadas/cencosud.html">Cencosud</a></li>
+                                        <li><a href="tarjeta-credito/especializadas/panamericana.html">Panamericana</a></li>
+                                        <li><a href="tarjeta-credito/especializadas/pricesmart.html">PriceSmart</a></li>
+                                        <li><a href="tarjeta-credito/especializadas/mastercard-gold-aadvantage.html">Mastercard Gold AAdvantage</a></li>
+                                        <li><a href="tarjeta-credito/especializadas/alianzas-finalizadas.html">Alianzas finalizadas</a></li>
+                                    </ul>
+                                </li>
+                                <li class="parent">
+                                    <strong>OTRAS MARCAS</strong>
+                                    <ul>
+                                        <li><a href="tarjeta-credito/otras-marcas/DIRECTV.html">DIRECTV</a></li>
+                                    </ul>
+                                </li>
+                                <li class="parent">
+                                    <strong>PRIVADAS</strong>
+                                    <ul>
+                                        <li><a href="tarjeta-credito/privadas/credito-facil-condesa.html">Crédito fácil CODENSA</a></li>
+                                        <li><a href="tarjeta-credito/privadas/ver-mas.html">Ver más >></a></li>
+                                    </ul>
+                                </li>
+                                <li class="parent">
+                                    <strong>MÁS INFORMACIÓN</strong>
+                                    <ul>
+                                        <li><a href="/tarjetas/beneficios">Beneficios</a></li>
+                                        <li><a href="/tarjetas/compra-cartera">compra de cartera</a></li>
+                                        <li><a href="/tarjetas/promociones">Promociones</a></li>
+                                        <li><a href="/tarjetas/redifacil">Redifácil</a></li>
+                                        <li><a href="/tarjetas/diferido-automatico">Diferido Automático</a></li>
+                                        <li><a href="/tarjetas/avances">Avances</a></li>
+                                        <li><a href="/tarjetas/calendario-facturacion">Calendario de Facturación</a></li>
+                                        <li><a href="/tarjetas/alianzas">Alianzas</a></li>
+                                        <li><a href="/tarjetas/asistencias">Asistencias</a></li>
+                                        <li><a href="/tarjetas/programas-sales-vip">Programas Sales VIP</a></li>
+                                        <li><a href="/tarjetas/dudas-tc">¿Dudas sobre tu TC?</a></li>
+                                        <li><a href="/tarjetas/pago-minimo-alterno">Pago mínimo alterno</a></li>
+                                        <li><a href="/tarjetas/conoce-extracto">Conoce tu extracto</a></li>
+                                    </ul>
+                                </li>
+                                <li class="parent">
+                                    <strong>PUNTOS ONE REWARDS</strong>
+                                    <ul>
+                                        <li><a href="/puntos/conoce-nuestro-programa">Conoce nuestro programa de puntos One Rewards</a></li>
+                                        <li><a href="/puntos/redime-puntos">Redime tus puntos One Rewards</a></li>
+                                        <li><a href="/puntos/nuevo-viajes-one-rewards">¡Nuevo! Viajes One Rewards</a></li>
+                                        <li><a href="/puntos/traslada-puntos">Traslada tus puntos entre tarjetas de crédito One Rewards</a></li>
+                                        <li><a href="/puntos/sigue-cerca-redenciones">Sigue de cerca todas tus redenciones</a></li>
+                                    </ul>
+                                </li>
+                                <li class="parent">
+                                    <strong>NUEVOS PRODUCTOS</strong>
+                                    <ul>
+                                        <li><a href="/productos/tarjeta-credito-compartida">Tarjeta de crédito compartida</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="ver-todo">
+                                <a href="/tarjetas-credito">Ver Todo</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="parent">
+                        <a href="/cuentas-inversion">Cuentas e Inversión</a>
+                        <div class="megaMenuWrapper">
+                            <ul class="mega-columns">
+                                <li class="parent">
+                                    <strong>Cuentas de Ahorro</strong>
+                                    <ul>
+                                        <li><a href="/cuentas/ahorro-tradicional">Ahorro Tradicional</a></li>
+                                        <li><a href="/cuentas/ahorro-digital">Ahorro Digital</a></li>
+                                        <li><a href="/cuentas/ahorro-programado">Ahorro Programado</a></li>
+                                        <li><a href="/cuentas/ahorro-juvenil">Ahorro Juvenil</a></li>
+                                        <li><a href="/cuentas/ahorro-infantil">Ahorro Infantil</a></li>
+                                    </ul>
+                                </li>
+                                <li class="parent">
+                                    <strong>Inversiones</strong>
+                                    <ul>
+                                        <li><a href="/inversiones/cdt">CDT - Certificados</a></li>
+                                        <li><a href="/inversiones/fondos-inversion">Fondos de Inversión</a></li>
+                                        <li><a href="/inversiones/fiducia">Fiducia</a></li>
+                                        <li><a href="/inversiones/renta-fija">Renta Fija</a></li>
+                                        <li><a href="/inversiones/renta-variable">Renta Variable</a></li>
+                                    </ul>
+                                </li>
+                                <li class="parent">
+                                    <strong>Servicios</strong>
+                                    <ul>
+                                        <li><a href="/servicios/asesor-inversion">Asesor de Inversión</a></li>
+                                        <li><a href="/servicios/simulador-inversion">Simulador de Inversión</a></li>
+                                        <li><a href="/servicios/reportes">Reportes de Inversión</a></li>
+                                        <li><a href="/servicios/transferencias">Transferencias</a></li>
+                                        <li><a href="/servicios/consultas">Consultas en Línea</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="ver-todo">
+                                <a href="/cuentas-inversion">Ver Todo</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="parent">
+                        <a href="/hipotecario">Hipotecario | Leasing</a>
+                        <div class="megaMenuWrapper">
+                            <ul class="mega-columns">
+                                <li class="parent">
+                                    <strong>Crédito Hipotecario</strong>
+                                    <ul>
+                                        <li><a href="/hipotecario/vivienda-nueva">Vivienda Nueva</a></li>
+                                        <li><a href="/hipotecario/vivienda-usada">Vivienda Usada</a></li>
+                                        <li><a href="/hipotecario/vis">Vivienda de Interés Social</a></li>
+                                        <li><a href="/hipotecario/construccion">Construcción</a></li>
+                                        <li><a href="/hipotecario/remodelacion">Remodelación</a></li>
+                                    </ul>
+                                </li>
+                                <li class="parent">
+                                    <strong>Leasing</strong>
+                                    <ul>
+                                        <li><a href="/leasing/habitacional">Leasing Habitacional</a></li>
+                                        <li><a href="/leasing/comercial">Leasing Comercial</a></li>
+                                        <li><a href="/leasing/vehiculos">Leasing de Vehículos</a></li>
+                                        <li><a href="/leasing/maquinaria">Leasing de Maquinaria</a></li>
+                                    </ul>
+                                </li>
+                                <li class="parent">
+                                    <strong>Herramientas</strong>
+                                    <ul>
+                                        <li><a href="/herramientas/simulador-hipotecario">Simulador Hipotecario</a></li>
+                                        <li><a href="/herramientas/capacidad-pago">Capacidad de Pago</a></li>
+                                        <li><a href="/herramientas/subsidios">Consulta de Subsidios</a></li>
+                                        <li><a href="/herramientas/avaluo">Solicitud de Avalúo</a></li>
+                                        <li><a href="/herramientas/estado-credito">Estado del Crédito</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="ver-todo">
+                                <a href="/hipotecario">Ver Todo</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="parent">
+                        <a href="Prestamos.html" data-overlaytext="Préstamos">Préstamos</a>
+                        <div class="megaMenuWrapper">
+                            <ul class="mega-columns">
+                                <li class="parent">
+                                    <strong>Sin garantía</strong>
+                                    <ul>
+                                        <li><a href="compra-de-cartera-tc.html">Compra de Cartera<br>tarjeta crédito</a></li>
+                                        <li><a href="Compra_de_cartera.html">Compra de Cartera</a></li>
+                                        <li><a href="credito_por_vehiculo.html">Crédito de Vehículo</a></li>
+                                        <li><a href="credito-libre-inversion.html">Crédito de Libre<br>Inversión</a></li>
+                                        <li><a href="credito-rotativo.html">Crédito Rotativo</a></li>
+                                        <li><a href="camp-rotativo">Promociones Rotativo</a></li>
+                                    </ul>
+                                </li>
+                                <li class="parent">
+                                    <strong>Con garantía</strong>
+                                    <ul>
+                                        <li><a href="consumo-pignoracion-fc.html">Consumo Pignoración<br>AFC</a></li>
+                                        <li><a href="consumo-pignoracion-cdt.html">Consumo Pignoración<br>CDT</a></li>
+                                        <li><a href="consumo-pignoracion-fpv.html">Consumo Pignoración<br>FPV</a></li>
+                                    </ul>
+                                </li>
+                                <li class="parent">
+                                    <strong>Más información y herramientas</strong>
+                                    <ul>
+                                        <li><a href="simulador-de-multiprestamo-consumo">Simulador de Crédito</a></li>
+                                        <li><a href="valor-total-unificado-prestamos">VTU Créditos</a></li>
+                                        <li><a href="ed-consumidor">Educación al<br>consumidor</a></li>
+                                        <li><a href="como-leer-extractos-de-libre-inversion-credito-rotativo">Lectura extractos de<br>Libre inversión o<br>Crédito rotativo</a></li>
+                                        <li><a href="abonos-extraordinarios">Abonos<br>extraordinarios</a></li>
+                                        <li><a href="Cambio-Ciclo-Creditos.pdf">Formato Cambio<br>Ciclos Créditos</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="ver-todo">
+                                <a href="/personas/prestamos">Ver Todo</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="parent">
+                        <a href="/seguros">Seguros</a>
+                        <div class="megaMenuWrapper">
+                            <ul class="mega-columns">
+                                <li class="parent">
+                                    <strong>Seguros Personales</strong>
+                                    <ul>
+                                        <li><a href="/seguros/vida">Seguro de Vida</a></li>
+                                        <li><a href="/seguros/accidentes">Seguro de Accidentes</a></li>
+                                        <li><a href="/seguros/salud">Seguro de Salud</a></li>
+                                        <li><a href="/seguros/desempleo">Seguro de Desempleo</a></li>
+                                        <li><a href="/seguros/educativo">Seguro Educativo</a></li>
+                                    </ul>
+                                </li>
+                                <li class="parent">
+                                    <strong>Seguros Patrimoniales</strong>
+                                    <ul>
+                                        <li><a href="/seguros/hogar">Seguro de Hogar</a></li>
+                                        <li><a href="/seguros/vehiculo">Seguro de Vehículo</a></li>
+                                        <li><a href="/seguros/pyme">Seguro PYME</a></li>
+                                        <li><a href="/seguros/responsabilidad">Responsabilidad Civil</a></li>
+                                    </ul>
+                                </li>
+                                <li class="parent">
+                                    <strong>Servicios</strong>
+                                    <ul>
+                                        <li><a href="/seguros/cotizador">Cotizador de Seguros</a></li>
+                                        <li><a href="/seguros/siniestros">Reporte de Siniestros</a></li>
+                                        <li><a href="/seguros/asistencia">Asistencia 24/7</a></li>
+                                        <li><a href="/seguros/renovacion">Renovación de Pólizas</a></li>
+                                        <li><a href="/seguros/consultas">Consultas en Línea</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="ver-todo">
+                                <a href="/seguros">Ver Todo</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="parent">
+                        <a href="/servicios">Servicios</a>
+                        <div class="megaMenuWrapper">
+                            <ul class="mega-columns">
+                                <li class="parent">
+                                    <strong>Servicios Bancarios</strong>
+                                    <ul>
+                                        <li><a href="/servicios/transferencias">Transferencias</a></li>
+                                        <li><a href="/servicios/giros">Giros Nacionales</a></li>
+                                        <li><a href="/servicios/remesas">Remesas</a></li>
+                                        <li><a href="/servicios/pagos">Pagos de Servicios</a></li>
+                                        <li><a href="/servicios/recaudos">Recaudos</a></li>
+                                        <li><a href="/servicios/cheques">Cheques de Gerencia</a></li>
+                                    </ul>
+                                </li>
+                                <li class="parent">
+                                    <strong>Servicios Digitales</strong>
+                                    <ul>
+                                        <li><a href="/servicios/banca-movil">Banca Móvil</a></li>
+                                        <li><a href="/servicios/banca-web">Banca por Internet</a></li>
+                                        <li><a href="/servicios/notificaciones">Notificaciones SMS</a></li>
+                                        <li><a href="/servicios/alertas">Alertas de Seguridad</a></li>
+                                        <li><a href="/servicios/tokens">Tokens de Seguridad</a></li>
+                                    </ul>
+                                </li>
+                                <li class="parent">
+                                    <strong>Atención al Cliente</strong>
+                                    <ul>
+                                        <li><a href="/servicios/chat">Chat en Línea</a></li>
+                                        <li><a href="/servicios/call-center">Call Center</a></li>
+                                        <li><a href="/servicios/citas">Agendar Citas</a></li>
+                                        <li><a href="/servicios/pqr">PQR</a></li>
+                                        <li><a href="/servicios/oficinas">Oficinas y Cajeros</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="ver-todo">
+                                <a href="/servicios">Ver Todo</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="parent">
+                        <a href="/canales-digitales">Canales digitales</a>
+                        <div class="megaMenuWrapper">
+                            <ul class="mega-columns">
+                                <li class="parent">
+                                    <strong>Banca Digital</strong>
+                                    <ul>
+                                        <li><a href="/canales/app-movil">App Móvil</a></li>
+                                        <li><a href="/canales/banca-web">Banca por Internet</a></li>
+                                        <li><a href="/canales/banca-telefonica">Banca Telefónica</a></li>
+                                        <li><a href="/canales/whatsapp">WhatsApp Banking</a></li>
+                                        <li><a href="/canales/chatbot">Chatbot</a></li>
+                                    </ul>
+                                </li>
+                                <li class="parent">
+                                    <strong>Autoservicio</strong>
+                                    <ul>
+                                        <li><a href="/canales/cajeros">Cajeros Automáticos</a></li>
+                                        <li><a href="/canales/corresponsales">Corresponsales</a></li>
+                                        <li><a href="/canales/puntos-atencion">Puntos de Atención</a></li>
+                                        <li><a href="/canales/kioscos">Kioscos Digitales</a></li>
+                                    </ul>
+                                </li>
+                                <li class="parent">
+                                    <strong>Soporte Digital</strong>
+                                    <ul>
+                                        <li><a href="/canales/tutoriales">Tutoriales</a></li>
+                                        <li><a href="/canales/videos">Videos Educativos</a></li>
+                                        <li><a href="/canales/faq">Preguntas Frecuentes</a></li>
+                                        <li><a href="/canales/soporte">Soporte Técnico</a></li>
+                                        <li><a href="/canales/actualizaciones">Actualizaciones</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="ver-todo">
+                                <a href="/canales-digitales">Ver Todo</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="hero-section">
+            <h1 class="hero-title">¡Finalizamos alianzas compartidas!</h1>
+            <p class="hero-subtitle">Disfruta beneficios One Rewards y One Cashback con Scotiabank Colpatria.</p>
+            <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/imagenes/BX2-3.png" 
+                 alt="Oficinas Scotiabank Colpatria" 
+                 class="hero-image">
+        </section>
+
+        <div class="cards-container">
+            <!-- Tarjeta NUESTRA -->
+            <div class="alliance-card">
+                <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/imagenes/BX1-2.png" 
+                     alt="Alianza NUESTRA" 
+                     class="card-image">
+                <h2 class="card-title">
+                    <a href="https://www.scotiabankcolpatria.com/personas/tarjeta-de-credito/especializadas/tarjeta-credito-nuestra">
+                        Finalizamos alianza con Nuestra
+                    </a>
+                </h2>
+                <p class="card-description">
+                    La alianza de la tarjeta de crédito de marca compartida NUESTRA (Surtifamiliar y Más X Menos) finalizó el 14 de junio de 2023 y NUESTRA (Mercacentro) finalizó el 01 de enero del 2025.
+                </p>
+                <div class="important-notice">
+                    <div class="important-title">¡Importante!</div>
+                    <div class="important-text">
+                        Surtifamiliar y Más X Menos desde julio de 2023 tienen nuevos beneficios y Mercacentro desde enero de 2025 y pertenecen al programa One Cashback.
+                    </div>
+                </div>
+                <a href="#" class="benefits-link">Consulta tus beneficios en tarjeta de crédito One Cashback</a>
+            </div>
+
+            <!-- Tarjeta PANAMERICANA -->
+            <div class="alliance-card">
+                <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/imagenes/BX1-2.png" 
+                     alt="Alianza Panamericana" 
+                     class="card-image">
+                <h2 class="card-title">
+                    <a href="https://www.scotiabankcolpatria.com/promociones/tarjetas-de-credito/cierre-panamericana">
+                        Finalizamos alianza con PANAMERICANA LIBRERÍA Y PAPELERÍA S.A.
+                    </a>
+                </h2>
+                <p class="card-description">
+                    La alianza de la tarjeta de crédito de marca compartida finalizó el 30 de noviembre de 2024.
+                </p>
+                <div class="important-notice">
+                    <div class="important-title">¡Importante!</div>
+                    <div class="important-text">
+                        Desde el 1 de diciembre de 2024 tienes nuevos beneficios y perteneces al programa One Rewards.
+                    </div>
+                </div>
+                <a href="#" class="benefits-link">Consulta tus beneficios en tarjeta de crédito One Rewards</a>
+            </div>
+
+            <!-- Tarjeta PEPE GANGA -->
+            <div class="alliance-card">
+                <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/imagenes/BX1-2.png" 
+                     alt="Alianza Pepe Ganga" 
+                     class="card-image">
+                <h2 class="card-title">
+                    <a href="https://www.scotiabankcolpatria.com/personas/tarjetas-de-credito/otras-marcas/pepe-ganga">
+                        Finalizamos alianza con Pepe Ganga
+                    </a>
+                </h2>
+                <p class="card-description">
+                    La alianza de la tarjeta de crédito de marca compartida finalizó el 30 de septiembre de 2020.
+                </p>
+                <div class="important-notice">
+                    <div class="important-title">¡Importante!</div>
+                    <div class="important-text">
+                        Desde el 1 de octubre de 2020 tienes nuevos beneficios y perteneces al programa One Rewards.
+                    </div>
+                </div>
+                <a href="#" class="benefits-link">Consulta tus beneficios en tarjeta de crédito One Rewards Classic</a>
+            </div>
+
+            <!-- Tarjeta CAFAM -->
+            <div class="alliance-card">
+                <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/imagenes/BX2-3.png" 
+                     alt="Alianza Cafam" 
+                     class="card-image">
+                <h2 class="card-title">
+                    <a href="https://www.scotiabankcolpatria.com/personas/tarjetas-de-credito/especializadas/cafam-afiliados">
+                        Finalizamos alianza con Cafam
+                    </a>
+                </h2>
+                <p class="card-description">
+                    La alianza de la tarjeta de crédito de marca compartida finalizó el 31 de marzo de 2022.
+                </p>
+                <div class="important-notice">
+                    <div class="important-title">¡Importante!</div>
+                    <div class="important-text">
+                        Desde el 01 de abril de 2022 tienes nuevos beneficios y perteneces al programa One Cashback.
+                    </div>
+                </div>
+                <a href="#" class="benefits-link">Consulta tus beneficios en tarjeta de crédito One Cashback</a>
+            </div>
+
+            <!-- Tarjeta YAMAHA -->
+            <div class="alliance-card">
+                <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/imagenes/BX2-3.png" 
+                     alt="Alianza Yamaha" 
+                     class="card-image">
+                <h2 class="card-title">
+                    <a href="https://www.scotiabankcolpatria.com/personas/tarjetas-de-credito/otras-marcas/yamaha">
+                        Finalizamos alianza con Yamaha
+                    </a>
+                </h2>
+                <p class="card-description">
+                    La alianza de la tarjeta de crédito de marca compartida finalizó el 31 de octubre de 2021.
+                </p>
+                <div class="important-notice">
+                    <div class="important-title">¡Importante!</div>
+                    <div class="important-text">
+                        Desde el 01 de noviembre de 2021 tienes nuevos beneficios y perteneces al programa One Cashback.
+                    </div>
+                </div>
+                <a href="#" class="benefits-link">Consulta tus beneficios en tarjeta de crédito One Cashback</a>
+            </div>
+
+            <!-- Tarjeta RAPPI -->
+            <div class="alliance-card">
+                <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/imagenes/BX2-3.png" 
+                     alt="Alianza Rappi" 
+                     class="card-image">
+                <h2 class="card-title">
+                    <a href="https://www.scotiabankcolpatria.com/personas/tarjetas-de-credito/otras-marcas/rappi">
+                        Finalizamos alianza with Rappi
+                    </a>
+                </h2>
+                <p class="card-description">
+                    La alianza de la tarjeta de crédito de marca compartida finalizó el 1 de abril de 2020.
+                </p>
+                <div class="important-notice">
+                    <div class="important-title">¡Importante!</div>
+                    <div class="important-text">
+                        Desde el 02 de abril de 2020 tienes nuevos beneficios y perteneces al programa One Cashback.
+                    </div>
+                </div>
+                <a href="#" class="benefits-link">Consulta tus beneficios en tarjeta de crédito One Cashback</a>
+            </div>
+
+            <!-- Tarjeta VANTI -->
+            <div class="alliance-card">
+                <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/imagenes/BX1-2.png" 
+                     alt="Alianza Vanti" 
+                     class="card-image">
+                <h2 class="card-title">
+                    <a href="https://www.scotiabankcolpatria.com/personas/tarjetas-de-credito/otras-marcas/gas-natural">
+                        Finalizamos alianza con Vanti-Gas natural
+                    </a>
+                </h2>
+                <p class="card-description">
+                    La alianza de la tarjeta de crédito de marca compartida finalizó el 30 de septiembre de 2020.
+                </p>
+                <div class="important-notice">
+                    <div class="important-title">¡Importante!</div>
+                    <div class="important-text">
+                        Desde el 01 de octubre de 2020 tienes nuevos beneficios y perteneces al programa One Rewards.
+                    </div>
+                </div>
+                <a href="#" class="benefits-link">Consulta tus beneficios en tarjeta de crédito One Rewards Classic</a>
+            </div>
+
+            <!-- Tarjeta CLARO -->
+            <div class="alliance-card">
+                <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/imagenes/BX1-2.png" 
+                     alt="Alianza Claro" 
+                     class="card-image">
+                <h2 class="card-title">
+                    <a href="https://www.scotiabankcolpatria.com/personas/tarjetas-de-credito/especializadas/claro">
+                        Finalizamos alianza con Claro
+                    </a>
+                </h2>
+                <p class="card-description">
+                    La alianza de la tarjeta de crédito de marca Compartida Claro finalizó el 31 de mayo. Desde el 01 de junio de 2022.
+                </p>
+                <div class="important-notice">
+                    <div class="important-title">¡Importante!</div>
+                    <div class="important-text">
+                        Tienes nuevos beneficios y perteneces al programa One Rewards.
+                    </div>
+                </div>
+                <a href="#" class="benefits-link">Consulta tus beneficios en tarjeta de crédito One Rewards Classic</a>
+                <p style="margin-top: 10px; font-size: 0.9rem; color: #666;">
+                    Consulta los beneficios de la tarjeta de crédito de marca compartida antes de la finalización de la alianza.
+                </p>
+            </div>
+        </div>
+
+        <section class="final-message">
+            <h2>¡Descubre todo lo que puedes hacer con tu banco aliado!</h2>
+        </section>
+
+        <div class="disclaimer">
+            <p>En caso de no querer seguir recibiendo mensajes de texto de este tipo de parte de Scotiabank Colpatria, consulte la política de tratamiento de la información publicada en la parte inferior de la página web de Scotiabank Colpatria, en donde encontrará los canales de atención disponibles para atender este tipo de solicitudes.</p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-cta">
+            <div class="container">
+                <div class="cta-content">
+                    <div class="cta-icon">🏠</div>
+                    <h3>¡Explora nuestros productos!</h3>
+                    <p>Más soluciones para ti.</p>
+                    <a href="/productos" class="cta-link">Conócelas aquí</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-social">
+            <div class="container">
+                <p>Encuéntranos en nuestras redes sociales</p>
+                <div class="social-links">
+                    <a href="https://facebook.com/scotiabankcolpatria" aria-label="Facebook">📘</a>
+                    <a href="https://twitter.com/scotiacolpatria" aria-label="Twitter">❌</a>
+                    <a href="https://youtube.com/scotiabankcolpatria" aria-label="YouTube">📺</a>
+                    <a href="https://linkedin.com/company/scotiabank-colpatria" aria-label="LinkedIn">💼</a>
+                    <a href="https://instagram.com/scotiabankcolpatria" aria-label="Instagram">📷</a>
+                </div>
+                <div class="supervision">
+                    <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/imagenes/logos/vigilado-s.png" 
+                         alt="Superintendencia Financiera de Colombia">
+                </div>
+            </div>
+        </div>
+        <div class="footer-links">
+            <div class="container">
+                <div class="links-grid">
+                    <a href="/productos-servicios">Información sobre productos y servicios</a>
+                    <a href="/consumidor-financiero">Consumidor Financiero</a>
+                    <a href="/educacion-financiera">Educación Financiera</a>
+                    <a href="/seguridad">Recomendaciones de Seguridad</a>
+                    <a href="/politica-cobro">Política de gestión de cobro</a>
+                    <a href="/politica-proveedores">Política proveedores</a>
+                    <a href="/politica-datos">Política protección de datos</a>
+                    <a href="/compensacion">Política de compensación</a>
+                    <a href="/fatca">FATCA</a>
+                    <a href="/habeas-data">Habeas Data</a>
+                    <a href="/defensor-consumidor">Defensoría del consumidor</a>
+                    <a href="/reglamentos">Reglamento general de productos</a>
+                    <a href="/tasas-tarifas">Tasas y tarifas</a>
+                    <a href="/formatos">Formatos</a>
+                    <a href="/actualizacion-datos">Actualización de datos</a>
+                    <a href="/superintendencia">Superintendencia</a>
+                    <a href="/terminos-condiciones">Términos y Condiciones</a>
+                    <a href="/quejas-reclamos">Quejas y Reclamos</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2025 - ® Marca registrada de The Bank of Nova Scotia, utilizada bajo licencia.</p>
+            </div>
+        </div>
+        <button class="back-to-top" aria-label="Volver arriba">↑</button>
+    </footer>
+</body>
+</html>

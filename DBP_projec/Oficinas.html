@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oficinas Scotiabank Colpatria</title>
+    <meta name="description" content="Encuentra la oficina Scotiabank Colpatria más cercana. Consulta ubicaciones, horarios y servicios de nuestra red nacional de oficinas.">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css">
+    
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Scotia", Arial, sans-serif;
+            line-height: 1.5;
+            color: #333;
+            background: #fff;
+        }
+
+        /* Header */
+        .header {
+            background: #fff;
+            border-bottom: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-top {
+            background: #f5f5f5;
+            padding: 8px 0;
+            font-size: 12px;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-nav {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .top-nav a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        .main-header {
+            padding: 15px 0;
+        }
+
+        .main-header .header-container {
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .search-bar {
+            flex: 1;
+            max-width: 300px;
+            margin: 0 30px;
+            position: relative;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 8px 15px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            background: #f9f9f9;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .header-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #333;
+            font-size: 11px;
+        }
+
+        .header-btn i {
+            font-size: 18px;
+            margin-bottom: 2px;
+        }
+
+        .login-btn {
+            background: #ec111a;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-menu {
+            background: #fff;
+            border-bottom: 1px solid #eee;
+        }
+
+        .nav-menu ul {
+            display: flex;
+            list-style: none;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-menu li a {
+            display: block;
+            padding: 15px 25px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 3px solid transparent;
+        }
+
+        .nav-menu li a:hover {
+            color: #ec111a;
+            border-bottom-color: #ec111a;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .page-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 30px 0 20px 0;
+            color: #333;
+        }
+
+        .hero-section {
+            display: flex;
+            align-items: center;
+            margin: 40px 0;
+            gap: 40px;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-title {
+            color: #ec111a;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .hero-image {
+            flex: 0 0 300px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .accessibility-section {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .accessibility-icons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        .accessibility-icon {
+            width: 60px;
+            height: 60px;
+            background: #8e44ad;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+
+        .accessibility-text {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .accessibility-text strong {
+            color: #333;
+        }
+
+        /* Links Section */
+        .links-section {
+            margin: 40px 0;
+        }
+
+        .link-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .link-item:last-child {
+            border-bottom: none;
+        }
+
+        .link-item a {
+            color: #007eab;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .link-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* News Section */
+        .news-section {
+            margin: 40px 0;
+        }
+
+        .news-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .year-tabs {
+            border-bottom: 1px solid #eee;
+            margin-bottom: 20px;
+        }
+
+        .year-tab {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-bottom: none;
+            margin-right: 5px;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .year-tab.active {
+            background: #fff;
+            color: #333;
+            border-bottom: 1px solid #fff;
+            margin-bottom: -1px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #333;
+            color: #fff;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-text {
+            font-size: 12px;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            font-size: 10px;
+            margin-bottom: 20px;
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .social-icon {
+            width: 30px;
+            height: 30px;
+            background: #555;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            background: #ec111a;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #555;
+            padding-top: 20px;
+            font-size: 10px;
+            color: #999;
+        }
+
+        .footer-links-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .footer-links-grid a {
+            color: #999;
+            text-decoration: none;
+            font-size: 10px;
+        }
+
+        .footer-links-grid a:hover {
+            color: #fff;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .search-bar {
+                max-width: 100%;
+                margin: 0;
+            }
+
+            .nav-menu ul {
+                flex-direction: column;
+            }
+
+            .hero-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-image {
+                flex: none;
+                max-width: 100%;
+            }
+
+            .accessibility-icons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-links-grid {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="header-container">
+                <ul class="top-nav">
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="/momentos">Momentos</a></li>
+                    <li><a href="/business">Business</a></li>
+                    <li><a href="/empresas">Empresas</a></li>
+                    <li><a href="/corporativo">Corporativo</a></li>
+                </ul>
+                <ul class="top-nav">
+                    <li><a href="/acerca-de">Acerca de</a></li>
+                    <li><a href="/cajeros">Cajeros</a></li>
+                    <li><a href="/mas-sitios">Más sitios</a></li>
+                    <li><a href="/trabaja-con-nosotros">Trabaja con nosotros</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main-header">
+            <div class="header-container">
+                <div class="logo">
+                    <img src="https://cdn.aglty.io/scotiabank-colombia/Global-Rebrand/logo-site-2.png" alt="Scotiabank Colpatria">
+                </div>
+
+                <div class="search-bar">
+                    <input type="text" placeholder="Empieza tu búsqueda">
+                </div>
+
+                <div class="header-actions">
+                    <a href="/corresponsales" class="header-btn">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Corresponsales</span>
+                    </a>
+                    <a href="/oficinas" class="header-btn">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Oficinas</span>
+                    </a>
+                    <a href="/contacto" class="header-btn">
+                        <i class="fas fa-phone"></i>
+                        <span>Contáctanos</span>
+                    </a>
+                    <a href="/pse" class="header-btn">
+                        <i class="fas fa-credit-card"></i>
+                        <span>PSE</span>
+                    </a>
+                    <a href="/login" class="login-btn">Ingresar</a>
+                </div>
+            </div>
+        </div>
+
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="/barranquilla">Barranquilla</a></li>
+                <li><a href="/bogota">Bogotá</a></li>
+                <li><a href="/cali">Cali</a></li>
+                <li><a href="/medellin">Medellín</a></li>
+                <li><a href="/pereira">Pereira</a></li>
+                <li><a href="/cartagena">Cartagena</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h1 class="page-title">Oficinas Scotiabank Colpatria</h1>
+
+        <div class="hero-section">
+            <div class="hero-content">
+                <h2 class="hero-title">CONOCE NUESTRA RED DE OFICINAS</h2>
+            </div>
+            <div class="hero-image">
+                <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250' fill='%23f0f8ff'><rect width='400' height='250' fill='%23f0f8ff'/><circle cx='320' cy='80' r='40' fill='%23e6f3ff'/><rect x='50' y='120' width='300' height='80' rx='10' fill='%23fff'/><rect x='70' y='140' width='50' height='40' fill='%23e0e0e0'/><rect x='140' y='145' width='80' height='6' fill='%23ddd'/><rect x='140' y='160' width='60' height='6' fill='%23ddd'/><rect x='140' y='175' width='40' height='6' fill='%23ddd'/></svg>" alt="Oficina Scotiabank Colpatria">
+            </div>
+        </div>
+
+        <div class="accessibility-section">
+            <div class="accessibility-icons">
+                <div class="accessibility-icon">
+                    <i class="fas fa-sign-language"></i>
+                </div>
+                <div class="accessibility-icon">
+                    <i class="fas fa-universal-access"></i>
+                </div>
+                <div class="accessibility-icon">
+                    <i class="fas fa-deaf"></i>
+                </div>
+            </div>
+            <p class="accessibility-text">
+                Seguimos fortaleciendo la comunicación inclusiva, <strong>cubriendo todo el territorio nacional.</strong>
+            </p>
+        </div>
+
+        <div class="links-section">
+            <div class="link-item">
+                <a href="#ciudades-a-d">Ciudades A - D</a>
+            </div>
+            <div class="link-item">
+                <a href="#ciudades-e-l">Ciudades E - L</a>
+            </div>
+            <div class="link-item">
+                <a href="#ciudades-m-p">Ciudades M - P</a>
+            </div>
+            <div class="link-item">
+                <a href="#ciudades-q-z">Ciudades Q - Z</a>
+            </div>
+            <div class="link-item">
+                <a href="https://www.scotiabankcolpatria.com/oficinas/puntos-pago">Consulta nuestros Corresponsales de pagos</a>
+            </div>
+            <div class="link-item">
+                <a href="https://www.scotiabankcolpatria.com/oficinas/oficinas-premium">Consulta nuestras Oficinas Premium</a>
+            </div>
+            <div class="link-item">
+                <a href="/personas/cajeros">Consulta los Cajeros Automáticos.</a>
+            </div>
+        </div>
+
+        <div class="news-section">
+            <h2 class="news-title">NOVEDADES DE OFICINAS</h2>
+            
+            <div class="year-tabs">
+                <div class="year-tab active">2025</div>
+                <div class="year-tab">2024</div>
+                <div class="year-tab">2023</div>
+                <div class="year-tab">2022</div>
+                <div class="year-tab">2021</div>
+                <div class="year-tab">2020</div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 30' fill='white'><text x='10' y='20' font-size='12' font-family='Arial'>SCOTIABANK</text></svg>" alt="Scotiabank" style="height: 20px;">
+            </div>
+            
+            <div class="footer-text">
+                Seguimos mejorando productos<br>
+                Una experiencia única<br>
+                <a href="#" style="color: #007eab;">Conoce más</a>
+            </div>
+
+            <div class="footer-text">
+                Síguenos en nuestras redes sociales
+            </div>
+
+            <div class="footer-social">
+                <a href="https://www.facebook.com/Scotiabankcolpatria" class="social-icon">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://twitter.com/ScotiaColpatria" class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.youtube.com/channel/UC7ii5Ew1qdz47rn4CntnYnA" class="social-icon">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://www.instagram.com/scotiabankcolpatria/" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+
+            <div class="footer-links-grid">
+                <a href="/informacion-productos">Información sobre productos y servicios</a>
+                <a href="/consumidor-financiero">Consumidor Financiero</a>
+                <a href="/educacion-financiera">Educación Financiera</a>
+                <a href="/seguridad">Recomendaciones de Seguridad y Prevención de Fraude</a>
+                <a href="/politica-cobranza">Política de gestión de cobro</a>
+                <a href="/politica-proveedores">Política proveedores</a>
+                <a href="/politica-datos">Política protección de datos Scotiabank Colpatria</a>
+                <a href="/politica-compensacion">Política de compensación y resarcimiento</a>
+                <a href="/fatca">FATCA</a>
+                <a href="/habeas-data">Generalidades del Habeas Data</a>
+                <a href="/defensor-consumidor">Defensoría del consumidor financiero</a>
+                <a href="/contratos">Reglamento general de productos</a>
+                <a href="/tasas-tarifas">Tasas y tarifas</a>
+                <a href="/formatos">Formatos</a>
+                <a href="/actualizacion-datos">Actualización de datos</a>
+                <a href="/superfinanciera">Superfinanciera</a>
+                <a href="/inversionistas">Inversionistas</a>
+                <a href="/terminos">Términos y Condiciones</a>
+                <a href="/navegadores">Navegadores compatibles</a>
+                <a href="/seguro-depositos">Seguro depósitos Fogafin</a>
+                <a href="/licitacion-seguros">Licitación Seguros</a>
+                <a href="/fiduciaria">Fiduciaria Scotiabank Colpatria</a>
+                <a href="/securities">Scotia Securities</a>
+                <a href="/sala-prensa">Sala de Prensa</a>
+                <a href="/quejas-reclamos">Quejas y Reclamos</a>
+                <a href="/transparencia">Botón de Transparencia</a>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 - ® Marca registrada de The Bank of Nova Scotia, utilizada bajo licencia.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Year tabs functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const yearTabs = document.querySelectorAll('.year-tab');
+            
+            yearTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remove active class from all tabs
+                    yearTabs.forEach(t => t.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+                    
+                    // Here you would normally load content for the selected year
+                    console.log('Selected year:', this.textContent);
+                });
+            });
+            const searchInput = document.querySelector('.search-bar input');
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    const searchTerm = this.value.trim();
+                    if (searchTerm) {
+                        console.log('Searching for:', searchTerm);
+                        // Implement search functionality
+                    }
+                }
+            });
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('.header');
+                if (window.scrollY > 50) {
+                    header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+                } else {
+                    header.style.boxShadow = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

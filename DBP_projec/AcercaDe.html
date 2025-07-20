@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información acerca de Scotiabank Colpatria</title>
+    <meta name="description" content="Conoce todo sobre Scotiabank Colpatria; su historia, portafolio de servicios, su talento humano y todos los productos que tenemos para ti.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #ffffff;
+        }
+        /* Header Styles */
+        .main-header {
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1000;
+        }
+
+        .top-navigation {
+            background: #f8f9fa;
+            padding: 8px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .top-nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .nav-tabs {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-tabs li a {
+            text-decoration: none;
+            color: #666;
+            font-size: 14px;
+            padding: 5px 0;
+            transition: color 0.3s;
+        }
+
+        .nav-tabs li a:hover {
+            color: #ec111a;
+        }
+
+        .header-main {
+            padding: 15px 0;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo-container {
+            flex: 0 0 auto;
+        }
+
+        .logo-container img {
+            height: 60px;
+            width: auto;
+        }
+
+        .search-container {
+            flex: 1;
+            max-width: 400px;
+            margin: 0 30px;
+            position: relative;
+        }
+
+        .search-form {
+            display: flex;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            overflow: hidden;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .search-button {
+            background: #ec111a;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .action-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #666;
+            font-size: 12px;
+            transition: color 0.3s;
+        }
+
+        .action-link:hover {
+            color: #ec111a;
+        }
+
+        .action-link i {
+            font-size: 20px;
+            margin-bottom: 4px;
+        }
+
+        .login-section {
+            position: relative;
+        }
+
+        .login-button {
+            background: #ec111a;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .login-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: #ec111a;
+            min-width: 250px;
+            border-radius: 8px;
+            padding: 10px 0;
+            display: none;
+            margin-top: 5px;
+        }
+
+        .login-section:hover .login-dropdown {
+            display: block;
+        }
+
+        .login-dropdown a {
+            display: block;
+            color: white;
+            padding: 8px 20px;
+            text-decoration: none;
+            font-size: 13px;
+            transition: background 0.3s;
+        }
+
+        .login-dropdown a:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .register-text {
+            color: #666;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+
+        .register-text a {
+            color: #ec111a;
+            text-decoration: none;
+        }
+        .main-navigation {
+            background: #fff;
+            border-top: 1px solid #e0e0e0;
+            position: relative;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            padding: 15px;
+            cursor: pointer;
+        }
+
+        .main-menu {
+            display: flex;
+            list-style: none;
+            justify-content: flex-start;
+        }
+
+        .main-menu > li {
+            position: relative;
+        }
+
+        .main-menu > li > a {
+            display: block;
+            padding: 20px 25px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .main-menu > li:hover > a {
+            color: #ec111a;
+        }
+
+        .submenu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 250px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 15px 0;
+            display: none;
+            z-index: 100;
+        }
+
+        .main-menu > li:hover .submenu {
+            display: block;
+        }
+
+        .submenu li {
+            list-style: none;
+        }
+
+        .submenu a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #666;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+
+        .submenu a:hover {
+            background: #f8f9fa;
+            color: #ec111a;
+        }
+
+        .submenu-title {
+            font-weight: bold;
+            color: #333;
+            padding: 10px 20px;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 5px;
+        }
+        .content-wrapper {
+            min-height: 400px;
+        }
+
+        .page-header {
+            background: #f8f9fa;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: 28px;
+            color: #333;
+            font-weight: 300;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .banner-image {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .main-footer {
+            background: #2c3e50;
+            color: white;
+            margin-top: 60px;
+        }
+
+        .footer-top {
+            padding: 40px 0;
+            background: #34495e;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .footer-column {
+            margin-bottom: 30px;
+        }
+
+        .footer-column h4 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .footer-column p {
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #bdc3c7;
+        }
+
+        .footer-column a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .footer-column a:hover {
+            text-decoration: underline;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #3498db;
+        }
+
+        .regulator-logo {
+            margin: 20px 0;
+        }
+
+        .regulator-logo img {
+            max-height: 60px;
+        }
+
+        .footer-links {
+            background: #2c3e50;
+            padding: 20px 0;
+            border-top: 1px solid #34495e;
+        }
+
+        .footer-links-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 10px;
+            font-size: 10px;
+        }
+
+        .links-grid a {
+            color: #bdc3c7;
+            text-decoration: none;
+            padding: 5px 0;
+            display: block;
+        }
+
+        .links-grid a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            background: #1a252f;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 12px;
+            color: #95a5a6;
+        }
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .search-container {
+                max-width: 100%;
+                margin: 0;
+            }
+
+            .header-actions {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .main-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            }
+
+            .main-menu.active {
+                display: flex;
+            }
+
+            .main-menu > li > a {
+                padding: 15px 20px;
+                border-bottom: 1px solid #eee;
+            }
+
+            .submenu {
+                position: static;
+                display: none;
+                box-shadow: none;
+                background: #f8f9fa;
+                margin: 0;
+                border-radius: 0;
+            }
+
+            .page-title {
+                font-size: 24px;
+            }
+
+            .nav-tabs {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .top-nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 20px;
+            }
+
+            .main-content {
+                padding: 20px;
+            }
+
+            .links-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="top-navigation">
+            <div class="top-nav-container">
+                <ul class="nav-tabs">
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="/segmentos">Momentos</a></li>
+                    <li><a href="/pyme">Business</a></li>
+                    <li><a href="/empresas">Empresas</a></li>
+                    <li><a href="/corporativo">Corporativo</a></li>
+                    <li><a href="/scotia-wealth-management">Wealth Management</a></li>
+                </ul>
+                <ul class="nav-tabs">
+                    <li><a href="/acerca-de">Acerca de</a></li>
+                    <li><a href="/cajeros/automaticos">Cajeros</a></li>
+                    <li><a href="#">Más sitios</a></li>
+                    <li><a href="/acerca-de/trabaje-con-nosotros">Trabaja con nosotros</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="header-container">
+                <div class="logo-container">
+                    <a href="/">
+                        <img src="https://cdn.aglty.io/scotiabank-colombia/Global-Rebrand/logo-site-2.png" alt="Scotiabank Colpatria Logo">
+                    </a>
+                </div>
+                <div class="search-container">
+                    <form class="search-form" action="/search-result" method="post">
+                        <input type="text" class="search-input" name="q" placeholder="Empieza tu búsqueda">
+                        <input type="hidden" name="tab" value="acerca-de">
+                        <button type="submit" class="search-button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="header-actions">
+                    <a href="/oficinas/puntos-pago" class="action-link" target="_blank">
+                        <i class="fas fa-store"></i>
+                        <span>Corresponsales</span>
+                    </a>
+                    <a href="/oficinas" class="action-link">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Oficinas</span>
+                    </a>
+                    <a href="/contactenos" class="action-link">
+                        <i class="fas fa-phone"></i>
+                        <span>Contáctanos</span>
+                    </a>
+                    <a href="#" class="action-link" target="_blank">
+                        <i class="fas fa-credit-card"></i>
+                        <span>PSE</span>
+                    </a>
+                </div>
+                <div class="login-section">
+                    <button class="login-button">
+                        <i class="fas fa-user"></i>
+                        Ingresar
+                    </button>
+                    <div class="login-dropdown">
+                        <a href="#" target="_blank">Banca Virtual Personas</a>
+                        <a href="#" target="_blank">Banca Virtual Empresarial</a>
+                        <a href="#">ScotiaConnect</a>
+                        <a href="#" target="_blank">Pines Scotiabank Colpatria</a>
+                        <a href="#" target="_blank">Pago impuestos DIAN</a>
+                        <a href="#" target="_blank">Pago Pila SOI</a>
+                        <a href="#" target="_blank">Extractos y certificaciones</a>
+                    </div>
+                    <p class="register-text">
+                        ¿Cliente nuevo? <a href="#" target="_self">Regístrate aquí</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <nav class="main-navigation">
+            <div class="nav-container">
+                <button class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="main-menu">
+                    <li>
+                        <a href="/acerca-de/inversionistas">Inversionistas</a>
+                        <ul class="submenu">
+                            <li class="submenu-title">Gobierno</li>
+                            <li><a href="#">Buen Gobierno Empresarial</a></li>
+                            <li><a href="#">Cultura Organizacional</a></li>
+                            <li><a href="#">Estatuto Social</a></li>
+                            <li><a href="#">Código de Buen Gobierno</a></li>
+                            <li class="submenu-title">Valoración</li>
+                            <li><a href="#">Programa emisión de bonos</a></li>
+                            <li><a href="#">Valor de la acción</a></li>
+                            <li><a href="#">Composición Accionaria</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/acerca-de/scotiabankcolpatria">Scotiabank Colpatria</a>
+                        <ul class="submenu">
+                            <li class="submenu-title">Información Institucional</li>
+                            <li><a href="#">Nuestra Organización</a></li>
+                            <li><a href="#">Cultura Organizacional</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/acerca-de/trabaje-con-nosotros">Trabaje con nosotros</a>
+                        <ul class="submenu">
+                            <li><a href="#">Nuestros protagonistas</a></li>
+                            <li><a href="#">¿Por qué trabajar con nosotros?</a></li>
+                            <li><a href="#">Ofertas laborales</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/acerca-de/responsabilidad-social">Últimas actualizaciones</a></li>
+                    <li><a href="/acerca-de/noticias">Noticias</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="content-wrapper">
+        <div class="page-header">
+            <h1 class="page-title">Información acerca de Scotiabank Colpatria</h1>
+        </div>
+        <div class="main-content">
+            <img src="https://cdn.aglty.io/scotiabank-colombia/Colpatria/banners/banner-seccion-institucional.jpg" 
+                 alt="Personas en reunión corporativa" 
+                 class="banner-image">
+        </div>
+    </main>
+    <footer class="main-footer">
+        <div class="footer-top">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h4>¡Explora nuestros productos!</h4>
+                    <p>Más soluciones para ti.</p>
+                    <a href="/informacion-productos-y-servicios">Conócelas aquí</a>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Encuentranos en nuestras redes sociales</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/Scotiabankcolpatria" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook-square"></i>
+                        </a>
+                        <a href="https://twitter.com/ScotiaColpatria" target="_blank" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UC7ii5Ew1qdz47rn4CntnYnA" target="_blank" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/scotiabank-colpatria/" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.instagram.com/scotiabankcolpatria/" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="regulator-logo">
+                    <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/imagenes/logos/vigilado-s.png" 
+                         alt="Logo de la Superintendencia Financiera">
+                </div>
+            </div>
+        </div>
+        <div class="footer-links">
+            <div class="footer-links-container">
+                <div class="links-grid">
+                    <a href="/informacion-productos-y-servicios">Información sobre productos y servicios</a>
+                    <a href="/consumidor-financiero">Consumidor Financiero</a>
+                    <a href="/educacion-financiera">Educación Financiera</a>
+                    <a href="/seguridad-bancaria">Recomendaciones de Seguridad y Prevención de Fraude</a>
+                    <a href="#">Política de gestión de cobro</a>
+                    <a href="/politicas/politicas-proveedores-del-banco">Política proveedores</a>
+                    <a href="#" target="_blank">Política protección de datos Scotiabank Colpatria</a>
+                    <a href="#">Política de compensación y resarcimiento</a>
+                    <a href="#">FATCA</a>
+                    <a href="/politicas/habeas-data">Generalidades del Habeas Data</a>
+                    <a href="/usuario-financiero/defensor-del-consumidor-financiero">Defensoría del consumidor financiero</a>
+                    <a href="#">Reglamento general de productos</a>
+                    <a href="/tasas-y-tarifas">Tasas y tarifas</a>
+                    <a href="#">Formatos</a>
+                    <a href="#">Actualización de datos</a>
+                    <a href="https://www.superfinanciera.gov.co/">Superfinanciera</a>
+                    <a href="/inversionistas">Inversionistas</a>
+                    <a href="/terminos-y-condiciones">Términos y Condiciones</a>
+                    <a href="#">Navegadores compatibles</a>
+                    <a href="#">Seguro depósitos Fogafin</a>
+                    <a href="#">Licitación Seguros</a>
+                    <a href="/fiduciaria" target="_blank">Fiduciaria Scotiabank Colpatria</a>
+                    <a href="#" target="_blank">Política protección de datos Fiduciaria</a>
+                    <a href="/securities" target="_blank">Scotia Securities</a>
+                    <a href="#" target="_blank">Política protección de datos Scotia Securities</a>
+                    <a href="#">Política de cobro Crédito Fácil Codensa</a>
+                    <a href="#">Sala de Prensa</a>
+                    <a href="#">Quejas y Reclamos</a>
+                    <a href="#">Botón de Transparencia</a>
+                    <a href="#">Correo seguro</a>
+                    <a href="#">Ley 2300/23 – Autorización de Canales</a>
+                    <a href="#">Autorregulador de Mercado de Valores (AMV)</a>
+                    <a href="#">Resolución 002 de 2024</a>
+                    <a href="#">CE.004 de 2025</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-container">
+                © 2025 - ® Marca registrada de The Bank of Nova Scotia, utilizada bajo licencia.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            const menu = document.querySelector('.main-menu');
+            menu.classList.toggle('active');
+        });
+        document.querySelectorAll('.main-menu > li > a').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    const submenu = this.nextElementSibling;
+                    if (submenu && submenu.classList.contains('submenu')) {
+                        e.preventDefault();
+                        submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+                    }
+                }
+            });
+        });
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                document.querySelector('.main-menu').classList.remove('active');
+                document.querySelectorAll('.submenu').forEach(function(submenu) {
+                    submenu.style.display = '';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

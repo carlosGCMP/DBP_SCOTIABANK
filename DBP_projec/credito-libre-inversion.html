@@ -379,282 +379,389 @@
             text-decoration: none;
             font-weight: 600;
         }
-
-        /* BOTÓN FIJO */
-        .btn-fixed {
-        position: fixed;
-        right: -160px;
-        top: 60%;
-        background-color: #ec111a;
-        opacity: 0;
-        border-radius: 100px 0 0 100px;
-        z-index: 999999;
-        transition: 0.3s all ease-in-out;
-        cursor: pointer;
+        /* Estilos base (se mantienen igual) */
+        .scb-credito-main {
+            font-family: 'Scotia', 'Scotia-Headline', Arial, sans-serif;
+            color: #333333;
+            line-height: 1.5;
+            max-width: 1920px;
+            margin: 0 auto;
         }
 
-        .btn-fixed:hover {
-        background-color: #be061b;
-        }
-
-        .btn-fixed.active {
-        right: 0;
-        opacity: 1;
-        transition: 0.3s all ease-in-out;
-        }
-
-        .btn-fixed a {
-        padding: 18px 30px;
-        font-weight: 800;
-        font-size: 18px;
-        line-height: 20px;
-        color: #fff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-        }
-
-        .btn-fixed a.arrow {
-        font-family: "Simple-Line-Icons-Pro", sans-serif !important;
-        font-size: 16px;
-        font-weight: 700;
-        }
-
-        @media (max-width: 600px) {
-        .btn-fixed {
-            top: auto;
-            bottom: -70px;
-            right: 0;
-            border-radius: 0;
-            width: 100%;
-        }
-
-        .btn-fixed a {
-            padding: 18px 24px;
-        }
-
-        .btn-fixed.active {
-            bottom: 0;
-        }
-
-        #footer .backToTop.active {
-            bottom: 100px !important;
-        }
-        }
-
-        /* HERO (BANNER SUPERIOR) */
-        .hero {
-        height: 430px;
-        width: 100%;
-        background-color: #7944bb;
-        display: flex;
-        justify-content: center;
-        position: relative;
-        }
-
-        .hero .hero-image {
-        width: 100%;
-        max-width: 50%;
-        height: 430px;
-        flex: 1;
-        background-color: #7944bb;
-        position: absolute;
-        right: 0;
-        background-position: top center;
-        background-size: cover;
-        }
-
-        .hero .left-container {
-        position: relative;
-        flex: 1;
-        width: 100%;
-        height: 100%;
-        }
-
-        .hero .text-container {
-        height: 100%;
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 30px;
-        background-color: #7944bb;
-        padding: 90px 30px;
-        color: white;
-        }
-        .text-container p{
-            font-size: 35px;
-        }
-
-        .hero .text-container h1 {
-        font-size: 48px;
-        line-height: 54px;
-        font-family: "Scotia-Headline", "Frutiger", Arial, Helvetica, sans-serif;
-        color: #fff;
-        }
-
-        .hero .text-container .btn-pill {
-        margin-left: 0;
-        width: max-content;
-        }
-
-        .hero .text-container .btn-pill:focus {
-        color: inherit !important;
-        }
-
-        /* TEXTO CENTRADO */
-        .description-center {
-        width: 94%;
-        margin: 0 auto;
-        color: #000;
-        text-align: center;
-        font-size: 25px;
-        }
-
-        /* CARDS DE BENEFICIOS */
-        .container-cards {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        gap: 20px;
-        padding: 20px 0;
-        }
-
-        .card {
-        background-color: #ffffff;
-        border: 1px solid #ddd;
-        padding: 15px;
-        width: 220px;
-        box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
-        text-align: center;
-        }
-
-        .card_img {
-        margin-bottom: 10px;
-        }
-
-        .card-title {
-        font-size: 17px;
-        font-weight: bold;
-        }
-
-        .card_text {
-        font-size: 16px;
-        }
-
-        /* SECCIÓN DE ANCLA INTERNA */
-        .tab-container {
-        font-size: 26px;
-        background-color: #eeeeee;
-        text-align: center;
-        padding: 10px 0;
-        }
-
-        /* TÍTULOS Y SECCIONES */
-        .section-title {
-        text-align: center;
-        font-size: 25px;
-        color: #7944bb;
-        margin-top: 40px;
-        }
-
-        .section-description {
-        text-align: center;
-        font-size: 25px;
-        margin-bottom: 20px;
-        }
-
-        .features-list,
-        .requirements-list {
-        font-size: 20px;
-        padding: 0 20px;
-        list-style: none;
-        }
-
-        .features-list li::before,
-        .requirements-list li::before {
-        content: "• ";
-        color: #7944bb;
-        font-weight: bold;
-        }
-
-        /* ACORDEÓN TÉRMINOS */
-        .sc-card-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px;
-        background: #f5f5f5;
-        cursor: pointer;
-        }
-
-        .sc-card-content {
-        padding: 24px;
-        background: #fff;
-        font-size: 14px;
-        color: #333;
-        }
-
-        .icon-arrow-1-down {
-        transform: rotate(0deg);
-        transition: transform 0.3s;
-        }
-
-        .sc-card-header.active .icon-arrow-1-down {
-        transform: rotate(180deg);
-        }
-
-        /* RESPONSIVE */
-        @media screen and (max-width: 768px) {
-        .hero {
-            flex-direction: column;
-            height: auto;
-        }
-
-        .hero .hero-image {
+        /* Estilos para banners con imágenes de fondo (se mantienen igual) */
+        .scb-hero-banner,
+        .scb-tajmahal-section,
+        .scb-consumo-section,
+        .scb-beneficios-section,
+        .scb-conocimiento-section,
+        .scb-desembolso-section,
+        .scb-eficaz-section,
+        .scb-requisitos-section {
             position: relative;
-            height: 200px;
-            max-width: 100%;
-        }
-
-        .hero .text-container {
-            width: 100%;
-            padding: 30px;
-        }
-
-        .container-cards {
-            flex-direction: column;
+            height: 622px;
+            display: flex;
             align-items: center;
+            justify-content: center;
+            margin-bottom: 40px;
         }
 
-        .card {
-            width: 90%;
+        .scb-beneficios1-section {
+            position: relative;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 40px;
         }
 
-        .headline,
-        .description-center,
-        .tab-container,
-        .section-title,
-        .section-description {
-            font-size: 20px;
+        .scb-hero-image,
+        .scb-tajmahal-image,
+        .scb-consumo-image,
+        .scb-beneficios-image,
+        .scb-conocimiento-image,
+        .scb-desembolso-image,
+        .scb-eficaz-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
         }
 
-        .features-list,
-        .requirements-list {
+        .scb-requisitos-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1019px;
+            height: 155px;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        /* Contenido sobre imágenes (se mantienen igual) */
+        .scb-hero-content,
+        .scb-tajmahal-content,
+        .scb-consumo-content,
+        .scb-beneficios-content,
+        .scb-conocimiento-content,
+        .scb-desembolso-content,
+        .scb-eficaz-content,
+        .scb-requisitos-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        .scb-beneficios-image {
+            position: relative;
+            z-index: 2;
+            object-fit: contain;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+
+        }
+
+        /* Tipografía específica (se mantienen igual) */
+        .scb-hero-title {
+            font-size: 48px;
+            max-width: 500px;
+            font-weight: 700;
+            color: #e9111a;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .scb-hero-subtitle {
+            font-size: 24px;
+            max-width: 500px;
+            font-weight: 400;
+            color: #333333;
+        }
+
+        .scb-tajmahal-text {
+            font-size: 36px;
+            max-width: 500px;
+            font-weight: 700;
+            color: #ffffff;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .scb-consumo-text {
+            font-size: 28px;
+            font-weight: 700;
+            color: #e9111a;
+            text-transform: uppercase;
+            line-height: 1.4;
+        }
+
+        /* MODIFICACIONES Y ADICIONES NUEVAS */
+
+        /* Sección de Beneficios - Actualizada */
+        .scb-beneficios-section {
+            text-align: center;
+            height: auto; /* Sobreescribe la altura fija */
+        }
+
+        .scb-beneficios-list {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            text-align: left;
+        }
+
+        /* .scb-beneficio-text ya existe, se mantiene igual */
+
+        /* Nueva sección de Características */
+        .scb-caracteristicas-section {
+            width: 100%;
+            padding: 40px 0;
+            background-color: #FFE5EC;
+        }
+
+        .scb-caracteristicas-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .scb-caracteristica-item {
+            margin-bottom: 30px;
+        }
+
+        .scb-caracteristica-subtitle {
+            font-size: 23px;
+            color: white;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .scb-caracteristica-text {
             font-size: 18px;
+            color: white;
         }
+
+        /* Nueva sección de Desembolso */
+        .scb-desembolso-section {
+            padding: 40px 0;
+            text-align: center;
+            background-color: #f8f8f8;
+            height: auto; /* Sobreescribe la altura fija */
         }
-        .tab-container {
-            font-size: 26px;
-            background-color: #eeeeee;
+
+        .scb-desembolso-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: #E9111A;
+            margin-bottom: 15px;
+        }
+
+        .scb-desembolso-subtext {
+            font-size: 18px;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Nueva sección de CTAs */
+        .scb-cta-section {
+            padding: 40px 0;
+        }
+
+        .scb-cta-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .scb-cta-box {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 30px;
+            border-radius: 8px;
             text-align: center;
         }
-        .tab-container a {
-            color: #8230DF;
-            text-decoration: none;
-            font-weight: bold;
+
+        .scb-cta-title {
+            font-size: 24px;
+            color: #E9111A;
+            margin-bottom: 15px;
+        }
+
+        .scb-cta-text {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .scb-cta-button {
+            background-color: #E9111A;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Nueva sección de Regulaciones */
+        .scb-regulaciones-section {
+            padding: 20px 0;
+            text-align: center;
+            background-color: #f8f8f8;
+        }
+
+        .scb-regulaciones-text {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        /* Sección de Requisitos - Actualizada */
+        .scb-requisitos-section {
+            padding: 60px 0 40px;
+            height: auto; /* Sobreescribe la altura fija */
+        }
+
+        .scb-requisitos-list {
+            margin-bottom: 20px;
+        }
+
+        /* .scb-requisitos-item ya existe, se mantiene igual */
+
+        .scb-requisitos-ingresos {
+            margin-bottom: 30px;
+            padding-left: 20px;
+        }
+
+        .scb-requisitos-ingreso {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        /* .scb-requisitos-nota ya existe, se mantiene igual */
+
+        /* Nueva sección Final */
+        .scb-final-section {
+            padding: 40px 0 60px;
+            background-color: #f8f8f8;
+        }
+
+        .scb-final-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .scb-final-box {
+            text-align: center;
+        }
+
+        .scb-final-text {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .scb-final-highlight {
+            font-size: 24px;
+            color: #E9111A;
+            font-weight: 700;
+            margin: 15px 0;
+        }
+
+        .scb-final-link {
+            color: #E9111A;
+            text-decoration: underline;
+        }
+
+        /* Términos y condiciones (ya existe, se mantiene igual) */
+        .scb-terminos-section {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid #eeeeee;
+        }
+
+        .scb-terminos-text {
+            font-size: 14px;
+            font-weight: 400;
+            color: #666666;
+        }
+
+        /* Responsive - Actualizado */
+        @media (max-width: 1024px) {
+            .scb-hero-title {
+                font-size: 36px;
+            }
+            
+            .scb-tajmahal-text {
+                font-size: 28px;
+            }
+            
+            .scb-beneficios-grid,
+            .scb-requisitos-grid,
+            .scb-caracteristicas-grid,
+            .scb-cta-grid,
+            .scb-final-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .scb-hero-banner,
+            .scb-tajmahal-section,
+            .scb-consumo-section,
+            .scb-beneficios-section,
+            .scb-conocimiento-section,
+            .scb-desembolso-section,
+            .scb-eficaz-section,
+            .scb-requisitos-section {
+                height: auto;
+                min-height: 400px;
+                padding: 60px 0;
+            }
+            
+            .scb-hero-title {
+                font-size: 28px;
+            }
+            
+            .scb-hero-subtitle {
+                font-size: 18px;
+            }
+            
+            .scb-consumo-text {
+                font-size: 20px;
+            }
+            
+            .scb-beneficio-text,
+            .scb-caracteristica-text,
+            .scb-requisitos-item {
+                font-size: 14px;
+            }
+            
+            .scb-desembolso-text {
+                font-size: 20px;
+            }
+            
+            .scb-cta-title,
+            .scb-final-highlight {
+                font-size: 20px;
+            }
         }
 
 
@@ -763,7 +870,6 @@
         }
     </style>
 </head>
-
 <body>
     <header class="header">
         <div class="header-top">
@@ -1013,7 +1119,7 @@
                     </li>
 
                     <li class="parent">
-                        <a href="/personas/prestamos" data-overlaytext="Préstamos">Préstamos</a>
+                        <a href="Prestamos.html" data-overlaytext="Préstamos">Préstamos</a>
                         <div class="megaMenuWrapper">
                             <ul class="mega-columns">
                                 <li class="parent">
@@ -1176,127 +1282,140 @@
                     </li>
                 </ul>
             </div>
-    </nav>
+        </nav>
 
     <div class="breadcrumb">
         <div class="container">
-            <a href="index.html">Personas</a> > <a href="Prestamos.html">Prestamos</a> > <a href="#">Sin garantía</a> > <a href="Compra_de_cartera.html">Compra de cartera</a>
+            <a href="index.html">Personas</a> > <a href="Prestamos.html">Prestamos</a> > <a href="#">Sin garantía</a> > <a href="credito-libre-inversion.html">Crédito de Libre Inversión</a>
         </div>
     </div>
+    <main class="scb-credito-main">
+   <!-- Banner principal -->
+        <section class="scb-hero-banner">
+            <div class="scb-hero-content">
+                <h1 class="scb-hero-title">Adquiere tu crédito de libre inversión</h1>
+                <p class="scb-hero-subtitle">La crédito puede ser un objetivo de reproducir y reproducir cualquier otro cambio.</p>
+            </div>
+            <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/2024/9/consumo/banner-libre-inversion-02.jpg" alt="Banner crédito libre inversión" class="scb-hero-image">
+        </section>
 
-    <div id="content-body" class="container">
+        <!-- Sección Taj Mahal -->
+        <section class="scb-tajmahal-section">
+            <div class="scb-tajmahal-content">
+                <p class="scb-tajmahal-text">SI QUIERES CONOCER EL TAJ MAHAL, SOLICITA UN CRÉDITO DE LIBRE INVERSIÓN</p>
+            </div>
+            <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/2024/9/consumo/banner-taj-mahal.jpg" alt="Banner Taj Mahal" class="scb-tajmahal-image">
+        </section>
 
-    <!-- Banner principal -->
-    <div class="hero">
-        <div class="hero-image" style="background-image: url('https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/2024/8/23MKT0578-banner-COMPRA-DE-CARTERA-SIN-TEXT.png');"></div>
-        <div class="left-container">
-        <div class="text-container">
-            <p class="headline"><strong>Unifica todas tus deudas de otros bancos con nuestro crédito de libre inversión</strong></p>
+        <!-- Consumo responsable -->
+        <section class="scb-consumo-section">
+            <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/2024/9/consumo/banner-home-41.jpg" alt="Consumo responsable" class="scb-consumo-image">
+        </section>
+
+    <!-- Sección de Beneficios -->
+    <section class="scb-beneficios-section">
+        <div class="scb-beneficios-content">
+            <h2 class="scb-beneficios-title">¿Qué beneficios tienes al adquirir un crédito de libre inversión?</h2>
         </div>
-        </div>
-    </div>
+    </section>
+    <section class="scb-beneficios1-section">
+            <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/2024/9/consumo/banner_libre_inversion_04.jpg" alt="Consumo responsable" class="scb-beneficios-image">
+    </section>
 
-    <!-- Descripción -->
-    <div class="description-center">
-        <p>
-        Compra de cartera o unificación de deudas que consiste en una línea de crédito de libre inversión que te permite unificar una o varias obligaciones bancarias y saldarlas a un interés menor en la que puedes hacer el pago de tus deudas de otras entidades financieras.
-        </p>
-    </div>
-
-    <!-- Beneficios principales -->
-    <section class="beneficios">
-        <div class="wrapper">
-        <div class="container-cards">
-            <div class="card">
-            <div class="card_img"><p class="card-title">Monto:</p></div>
-            <p class="card_text"><strong>Desde $1,2 Millones.</strong></p>
+    <!-- Sección de Características con fondo rosa -->
+    <section class="scb-caracteristicas-section" style="background-color: #e4979e; padding: 40px 0;">
+        <div class="scb-caracteristicas-content">
+            <h3 class="scb-caracteristicas-title" style="font-size: 40px; margin-left: 50px; color: white; font-weight: bold;">Características</h3>
+            
+            <div class="scb-caracteristicas-grid">
+                <div class="scb-caracteristica-item">
+                    <h4 class="scb-caracteristica-subtitle">Plazos y cuotas convenientes</h4>
+                    <p class="scb-caracteristica-text">Conoce desde su comienzo cuando posea y el paso fijo que los discursos de horas 27 meses durante la vigencia del crédito en línea.</p>
+                </div>
+                
+                <div class="scb-caracteristica-item">
+                    <h4 class="scb-caracteristica-subtitle">Sin Costo</h4>
+                    <p class="scb-caracteristica-text">Nadie somos el estudio de crédito para poder ayudar a cumplir sus sueños sin ningún costo, solo deben tener único mencionado y nosotros o asesoramos.</p>
+                </div>
+                
+                <div class="scb-caracteristica-item">
+                    <h4 class="scb-caracteristica-subtitle">Usalo para lo que necesitas</h4>
+                    <p class="scb-caracteristica-text">Con tu crédito de libre inversión puedes calentar otros, validar las deudas que tienes en otras entidades, remodelar su cara, volver estudiar, invocar y cumplir todas las metas y sueños.</p>
+                </div>
+                
+                <div class="scb-caracteristica-item">
+                    <h4 class="scb-caracteristica-subtitle">Seguro de vida</h4>
+                    <p class="scb-caracteristica-text">Crear la cesta ya paga de todo tipo de peso, el trabajo de tiempo, el trabajo de tiempo de hora y yo.</p>
+                </div>
             </div>
-            <div class="card">
-            <div class="card_img"><p class="card-title">Plazo:</p></div>
-            <p class="card_text"><strong>Desde 12 hasta 72 meses.</strong></p>
-            </div>
-            <div class="card">
-            <div class="card_img"><p class="card-title">Ingresos:</p></div>
-            <p class="card_text">
-                <strong>
-                Asalariados desde 2 SMMLV<br />
-                Pensionados desde 1 SMMLV<br />
-                Independientes desde 3 SMMLV
-                </strong>
-            </p>
-            </div>
-            <div class="card">
-            <div class="card_img"><p class="card-title">Edad:</p></div>
-            <p class="card_text"><strong>Desde 21 hasta 75 años</strong></p>
-            </div>
-        </div>
         </div>
     </section>
 
-    <!-- Navegación interna -->
-    <div class="sub-wrapper">
-        <div class="tab-container">
-        <strong>
-            <a class="scroll" href="#beneficios">Beneficios</a> &nbsp;&nbsp;
-            <a class="scroll" href="#caracteristicas">Características</a> &nbsp;&nbsp;
-            <a class="scroll" href="#requisitos">Requisitos</a>
-        </strong>
+    <!-- Sección de Desembolso rápido -->
+    <section class="scb-desembolso-section">
+        <div class="scb-desembolso-content">
+            <p class="scb-desembolso-text">El 95% de nuestros créditos los desembolsamos en menos de 1 hora</p>
+            <p class="scb-desembolso-subtext">El estudio de tu crédito va por nuestra cuenta, sigue los pasos y disfruta de un mayor flujo de caja que te permite cumplir tus metas</p>
         </div>
-    </div>
+    </section>
 
-    <!-- Beneficios Detallados -->
-    <div class="full-width">
-        <h3 id="beneficios" class="section-title">Beneficios:</h3>
-        <p class="section-description">Con tu crédito para Unificación de Deudas tienes beneficios como los siguientes:</p>
-        <p style="text-align: center;">
-        <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/2024/8/compra-de-cartera-ico-5.png" alt="Beneficios ícono" />
-        </p>
-    </div>
+    <!-- Llamados a la acción -->
+    <section class="scb-cta-section">
+        <div class="scb-cta-grid">
+            <div class="scb-cta-box"style="border-radius: 30px;">
+                <h3 class="scb-cta-title">¿Eres cliente? Tu crédito está confiado</h3>
+                <p class="scb-cta-text">Aprovecha que ya tenemos alguna información realista a solicitar desde tu Banca Virtual. Sin fines, sin codeudor y en minutos.</p>
+                <button class="scb-cta-button" style="border-radius: 50px; background-color: #c11e24;">Solicitar mi crédito</button>
+            </div>
+            
+            <div class="scb-cta-box" style="border-radius: 30px;">
+                <h3 class="scb-cta-title">¿Aún no eres cliente?</h3>
+                <p class="scb-cta-text">Fácil, sin papeles y sin codeudor. Inicia tu solicitud totalmente en línea y obtén tu crédito.</p>
+                <button class="scb-cta-button" style="border-radius: 50px; background-color: #c11e24;">Quiero mi crédito</button>
+            </div>
+        </div>
+    </section>
 
-    <!-- Características -->
-    <div class="full-width">
-        <h3 id="caracteristicas" class="section-title">Características</h3>
-        <ul class="features-list">
-        <li><strong>Plazos y cuotas convenientes:</strong> Tasa y plazo fijo hasta 72 meses durante toda la vigencia del crédito.</li>
-        <li><strong>Sin Costo:</strong> El estudio de crédito no tiene costo.</li>
-        <li><strong>Sin Codeudor:</strong> Solo necesitas tus documentos e historial de crédito positivo.</li>
-        <li><strong>Úsalo para lo que necesites:</strong> Compra de cartera, viajes, estudios, remodelación, inversión y más.</li>
-        <li><strong><a href="https://www.scotiabankcolpatria.com/tasas-y-tarifas" target="_blank">Tasas y Tarifas</a></strong></li>
-        </ul>
-    </div>
+    <!-- Sección de Requisitos -->
+    <section class="scb-requisitos-section">
+        <div class="scb-requisitos-content" style="max-width: none;">
+            <h2 class="scb-requisitos-title" style="text-align: center; font-size: 29px; margin-bottom: 40px; font-weight: bold;">Requisitos para solicitar crédito de libre inversión</h2>
+            
+            <div style="display: flex; justify-content: center;">
+                <p class="scb-requisitos-intro" style="text-align: justify; font-size: 25px; max-width: 1140px;">
+                    En caso de ser requerido estos son los documentos que debes presentar para solicitar tu crédito de libre inversión Scotiabank Colpatria.
+                </p>
+            </div>
+            
+            <div class="scb-beneficios-section">
+                <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/2024/9/consumo/banner_libre_inversion_06-bullets.jpg" alt="Consumo responsable" class="scb-beneficios-image" style="width: 100%;">
+            </div>
+        </div>
+    </section>
 
-    <!-- Requisitos -->
-    <div class="full-width">
-        <h3 id="requisitos" class="section-title">Requisitos de Compra de Cartera con Préstamo Personal</h3>
-        <ul class="requirements-list">
-        <li>Fotocopia de la cédula (ampliada al 150%).</li>
-        <li>Soporte de ingresos según actividad económica.</li>
-        <li>Extracto vigente o certificación de obligaciones a recoger (no mayor a 30 días).</li>
-        <li>Aprobación sujeta a políticas de crédito del banco.</li>
-        </ul>
-    </div>
+
+
+    <!-- Sección final de CTA -->
+    <section class="scb-final-section">
+        <div class="scb-final-grid">
+            <div class="scb-final-box">
+                <p class="scb-final-text">Si no eres cliente acércate a una de nuestras oficinas</p>
+                <a href="#" class="scb-final-link">Conoce tu oficina más cercana aquí</a>
+            </div>
+            
+            <div class="scb-final-box">
+                <p class="scb-final-text">Si eres cliente</p>
+                <p class="scb-final-highlight">ADQUIRIENDO</p>
+                <p class="scb-final-text">Desembolso en tiempo récord <a href="#" class="scb-final-link">¡solicitalo aquí!</a></p>
+            </div>
+        </div>
+    </section>
 
     <!-- Términos y condiciones -->
-    <div class="container-collapsible">
-        <div class="sc-accordion">
-        <div class="sc-card-accordion">
-            <div class="sc-card-header scotia-black">
-            <h2 class="title2">Términos y Condiciones</h2>
-            <i class="icon-arrow-1-down"></i>
-            </div>
-            <div class="sc-card-content">
-            <p class="text-s">
-                &reg; Marca registrada de The Bank of Nova Scotia, utilizada bajo licencia. Scotiabank Colpatria Establecimiento Bancario. Aprobación sujeta a políticas de crédito, requisitos de la entidad y condiciones del solicitante. La tasa puede variar de acuerdo con el perfil de cliente. Consulta condiciones en: 
-                <a href="https://www.scotiabankcolpatria.com/préstamo">este enlace</a>.
-                Consulta tasas y tarifas en la sección correspondiente. Sin sanción por prepago. Puedes hacer abonos dirigidos por nuestros canales.
-                <a href="https://www.scotiabankcolpatria.com/promociones/prestamos/ed-consumidor">Más información aquí</a>.
-            </p>
-            </div>
-        </div>
-        </div>
-    </div>
-
-    </div>
+    <section class="scb-terminos-section">
+        <p class="scb-terminos-text">Terminos y condiciones</p>
+    </section>
+</main>
 
 
     <footer class="footer">
@@ -1348,4 +1467,3 @@
     </footer>
 </body>
 </html>
-

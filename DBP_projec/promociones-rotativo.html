@@ -9,6 +9,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
 
         body {
@@ -380,283 +381,257 @@
             font-weight: 600;
         }
 
-        /* BOTÓN FIJO */
-        .btn-fixed {
-        position: fixed;
-        right: -160px;
-        top: 60%;
-        background-color: #ec111a;
-        opacity: 0;
-        border-radius: 100px 0 0 100px;
-        z-index: 999999;
-        transition: 0.3s all ease-in-out;
-        cursor: pointer;
+        /* Estilos para Crédito Rotativo */
+        .scr-rotativo-section {
+            font-family: 'Scotia', 'Scotia-Headline', Arial, sans-serif;
+            max-width: 1922px;
+            margin: 0 auto;
+            color: #333;
         }
 
-        .btn-fixed:hover {
-        background-color: #be061b;
-        }
-
-        .btn-fixed.active {
-        right: 0;
-        opacity: 1;
-        transition: 0.3s all ease-in-out;
-        }
-
-        .btn-fixed a {
-        padding: 18px 30px;
-        font-weight: 800;
-        font-size: 18px;
-        line-height: 20px;
-        color: #fff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-        }
-
-        .btn-fixed a.arrow {
-        font-family: "Simple-Line-Icons-Pro", sans-serif !important;
-        font-size: 16px;
-        font-weight: 700;
-        }
-
-        @media (max-width: 600px) {
-        .btn-fixed {
-            top: auto;
-            bottom: -70px;
-            right: 0;
-            border-radius: 0;
-            width: 100%;
-        }
-
-        .btn-fixed a {
-            padding: 18px 24px;
-        }
-
-        .btn-fixed.active {
-            bottom: 0;
-        }
-
-        #footer .backToTop.active {
-            bottom: 100px !important;
-        }
-        }
-
-        /* HERO (BANNER SUPERIOR) */
-        .hero {
-        height: 430px;
-        width: 100%;
-        background-color: #7944bb;
-        display: flex;
-        justify-content: center;
-        position: relative;
-        }
-
-        .hero .hero-image {
-        width: 100%;
-        max-width: 50%;
-        height: 430px;
-        flex: 1;
-        background-color: #7944bb;
-        position: absolute;
-        right: 0;
-        background-position: top center;
-        background-size: cover;
-        }
-
-        .hero .left-container {
-        position: relative;
-        flex: 1;
-        width: 100%;
-        height: 100%;
-        }
-
-        .hero .text-container {
-        height: 100%;
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 30px;
-        background-color: #7944bb;
-        padding: 90px 30px;
-        color: white;
-        }
-        .text-container p{
-            font-size: 35px;
-        }
-
-        .hero .text-container h1 {
-        font-size: 48px;
-        line-height: 54px;
-        font-family: "Scotia-Headline", "Frutiger", Arial, Helvetica, sans-serif;
-        color: #fff;
-        }
-
-        .hero .text-container .btn-pill {
-        margin-left: 0;
-        width: max-content;
-        }
-
-        .hero .text-container .btn-pill:focus {
-        color: inherit !important;
-        }
-
-        /* TEXTO CENTRADO */
-        .description-center {
-        width: 94%;
-        margin: 0 auto;
-        color: #000;
-        text-align: center;
-        font-size: 25px;
-        }
-
-        /* CARDS DE BENEFICIOS */
-        .container-cards {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        gap: 20px;
-        padding: 20px 0;
-        }
-
-        .card {
-        background-color: #ffffff;
-        border: 1px solid #ddd;
-        padding: 15px;
-        width: 220px;
-        box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
-        text-align: center;
-        }
-
-        .card_img {
-        margin-bottom: 10px;
-        }
-
-        .card-title {
-        font-size: 17px;
-        font-weight: bold;
-        }
-
-        .card_text {
-        font-size: 16px;
-        }
-
-        /* SECCIÓN DE ANCLA INTERNA */
-        .tab-container {
-        font-size: 26px;
-        background-color: #eeeeee;
-        text-align: center;
-        padding: 10px 0;
-        }
-
-        /* TÍTULOS Y SECCIONES */
-        .section-title {
-        text-align: center;
-        font-size: 25px;
-        color: #7944bb;
-        margin-top: 40px;
-        }
-
-        .section-description {
-        text-align: center;
-        font-size: 25px;
-        margin-bottom: 20px;
-        }
-
-        .features-list,
-        .requirements-list {
-        font-size: 20px;
-        padding: 0 20px;
-        list-style: none;
-        }
-
-        .features-list li::before,
-        .requirements-list li::before {
-        content: "• ";
-        color: #7944bb;
-        font-weight: bold;
-        }
-
-        /* ACORDEÓN TÉRMINOS */
-        .sc-card-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px;
-        background: #f5f5f5;
-        cursor: pointer;
-        }
-
-        .sc-card-content {
-        padding: 24px;
-        background: #fff;
-        font-size: 14px;
-        color: #333;
-        }
-
-        .icon-arrow-1-down {
-        transform: rotate(0deg);
-        transition: transform 0.3s;
-        }
-
-        .sc-card-header.active .icon-arrow-1-down {
-        transform: rotate(180deg);
-        }
-
-        /* RESPONSIVE */
-        @media screen and (max-width: 768px) {
-        .hero {
-            flex-direction: column;
-            height: auto;
-        }
-
-        .hero .hero-image {
+        .scr-hero-banner {
             position: relative;
-            height: 200px;
-            max-width: 100%;
-        }
-
-        .hero .text-container {
-            width: 100%;
-            padding: 30px;
-        }
-
-        .container-cards {
-            flex-direction: column;
+            height: 626px;
+            background-image: url(https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/imagenes/banners/banner-site-rot-prom.png);
+            background-size: cover;
+            background-position: center;
+            display: flex;
             align-items: center;
+            margin-bottom: 40px;
         }
 
-        .card {
-            width: 90%;
+        .scr-hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
         }
 
-        .headline,
-        .description-center,
-        .tab-container,
-        .section-title,
-        .section-description {
-            font-size: 20px;
+        .scr-hero-content {
+            position: relative;
+            z-index: 2;
+            width: 50%;
+            padding: 0 80px;
+            box-sizing: border-box;
         }
 
-        .features-list,
-        .requirements-list {
-            font-size: 18px;
+        .scr-main-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: #e9111a;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-transform: uppercase;
         }
+
+        .scr-hero-text {
+            font-size: 24px;
+            line-height: 1.4;
+            color: #333;
         }
-        .tab-container {
-            font-size: 26px;
-            background-color: #eeeeee;
+
+        /* Credit Rotative Tiles Styles */
+        .scrot-tiles-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: 'Scotia', 'Scotia-Headline', Arial, sans-serif;
+        }
+
+        .scrot-tile {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .scrot-tile:hover {
+            transform: translateY(-5px);
+        }
+
+        .scrot-tile-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-bottom: 1px solid #eee;
+        }
+
+        .scrot-tile-title {
+            font-size: 22px;
+            font-weight: normal;
+            margin: 15px 15px 10px;
+            line-height: 1.3;
+        }
+        .scrot-tile-title a {
+            color: black;
+            text-decoration: none;
+            font-weight: 100;
+        }
+
+        .scrot-tile-link {
+            color: black;
+            text-decoration: none;
+        }
+
+        .scrot-tile-link:hover {
+            text-decoration: underline;
+        }
+
+        .scrot-tile-description {
+            font-size: 14px;
+            margin: 0 15px 15px;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .scrot-tile-list {
+            font-size: 15px;
+            margin: 0 15px 15px;
+            padding-left: 20px;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .scrot-tile-list li {
+            margin-bottom: 5px;
+        }
+
+        .scrot-tile-arrow {
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: #ED0722;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            text-indent: -9999px;
+            overflow: hidden;
+        }
+
+        .scrot-tile-arrow:after {
+            content: "→";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+            text-indent: 0;
+        }
+
+        .scrot-cta-container {
+            grid-column: 1 / -1;
             text-align: center;
+            margin-top: 40px;
+            padding: 20px 0;
+            border-top: 2px solid #e9111a;
         }
-        .tab-container a {
-            color: #8230DF;
+
+        .scrot-cta-title {
+            font-size: 32px;
+            letter-spacing: -0.02em;
+            color: #333;
+            margin: 25px 0;
+            line-height: 1.3;
+        }
+
+        .scrot-cta-link {
+            color: #e9111a;
             text-decoration: none;
             font-weight: bold;
         }
 
+        .scrot-cta-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .scrot-tiles-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .scrot-cta-title {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .scrot-cta-title {
+                font-size: 20px;
+            }
+        }
+
+        .scr-terms {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid #ddd;
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .scr-hero-content {
+                padding: 0 40px;
+            }
+            
+            .scr-main-title {
+                font-size: 36px;
+            }
+            
+            .scr-hero-text {
+                font-size: 20px;
+            }
+            
+            .scr-section-title {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .scr-hero-banner {
+                height: 500px;
+            }
+            
+            .scr-hero-overlay {
+                width: 100%;
+                background-color: rgba(255, 229, 236, 0.9);
+            }
+            
+            .scr-hero-content {
+                width: 100%;
+                padding: 40px;
+            }
+            
+            .scr-main-title {
+                font-size: 28px;
+            }
+            
+            .scr-hero-text {
+                font-size: 18px;
+            }
+            
+            .scr-section-title {
+                font-size: 22px;
+            }
+            
+            .scr-section-text,
+            .scr-checkbox-list li {
+                font-size: 16px;
+            }
+            
+            .scr-checkbox-list li:before {
+                font-size: 16px;
+            }
+        }
 
         .footer {
             background: #333;
@@ -763,7 +738,6 @@
         }
     </style>
 </head>
-
 <body>
     <header class="header">
         <div class="header-top">
@@ -1176,140 +1150,114 @@
                     </li>
                 </ul>
             </div>
-    </nav>
+        </nav>
 
     <div class="breadcrumb">
         <div class="container">
-            <a href="index.html">Personas</a> > <a href="Prestamos.html">Prestamos</a> > <a href="#">Sin garantía</a> > <a href="Compra_de_cartera.html">Compra de cartera</a>
+            <a href="index.html">Personas</a> > <a href="Prestamos.html">Prestamos</a> > <a href="#">Sin garantía</a> > <a href="promociones-rotativo.html">Promociones de Credito Rotativo</a>
         </div>
     </div>
 
-    <div id="content-body" class="container">
-        
-        <!-- Banner principal -->
-        <div class="hero" style="width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw;">
-            <div class="hero-image" style="background-image: url('https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/2024/8/23MKT0578-banner-COMPRA-DE-CARTERA-SIN-TEXT.png');"></div>
-            <div class="left-container">
-                <div class="text-container" style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
-                    <p class="headline"style="padding-left: 660px;"><strong>Unifica todas tus deudas de otros bancos con nuestro crédito de libre inversión</strong></p>
+    <!-- Sección Crédito Rotativo -->
+    <section class="scr-rotativo-section">
+        <div class="scr-hero-banner">
+            <div class="scr-hero-overlay"></div>
+            <div class="scr-hero-content">
+                <h1 class="scr-main-title" style="color: white; font-size: 60px;">¡Adquiere hoy tu crédito rotativo y aprovechalo siempre!</h1>
+            </div>
+        </div>
+
+        <div class="scr-text-block">
+                <h2 class="scr-section-title" style="color: black; font-size: 35px; text-align: center; font-weight: unset;">Conoce los beneficios de nuestro <strong>Crédito Rotativo</strong> y disfruta de nuestras promociones</h2>
+            </div>
+
+        <section id="tileMain" class="scrot-tiles-container">
+            <div class="scrot-tile">
+                <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/2023/10/BOX-23MKT0589-BOX.png" alt="Crédito Rotativo" class="scrot-tile-image">
+                <h3 class="scrot-tile-title"><a href="https://www.scotiabankcolpatria.com/promociones/prestamos/tu-credito-rotativo-te-extrana-lan-1" class="scrot-tile-link">¡Tu Crédito Rotativo te extraña!</a></h3>
+                <p class="scrot-tile-description">Úsalo en todo lo que necesites:</p>
+                <ul class="scrot-tile-list">
+                    <li>Unifica tus deudas</li>
+                    <li>Remodela tu hogar</li>
+                    <li>Emprende tu negocio</li>
+                </ul>
+                <a href="https://www.scotiabankcolpatria.com/promociones/prestamos/tu-credito-rotativo-te-extrana-lan-1" class="scrot-tile-arrow"></a>
+            </div>
+
+            <div class="scrot-tile">
+                <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/2024/24MKT0051-BANNER2.jpg" alt="Bono Rotativo" class="scrot-tile-image">
+                <h3 class="scrot-tile-title"><a href="https://www.scotiabankcolpatria.com/promociones/prestamos/bono-rotativo" class="scrot-tile-link">En estas fiestas gana con tu Crédito Rotativo</a></h3>
+                <p class="scrot-tile-description">No te pierdas la oportunidad de llevarte un Bono del éxito usando tu Crédito Rotativo.</p>
+                <a href="https://www.scotiabankcolpatria.com/promociones/prestamos/bono-rotativo" class="scrot-tile-arrow"></a>
+            </div>
+
+            <div class="scrot-tile">
+                <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/imagenes/box/box-rot-1.jpg" alt="Beneficios" class="scrot-tile-image">
+                <h3 class="scrot-tile-title"><a href="https://www.scotiabankcolpatria.com/promociones/prestamos/plataforma-rot" class="scrot-tile-link">Descubre un mundo de beneficios para ti.</a></h3>
+                <p class="scrot-tile-description">Sin codeudor, disponibilidad inmediata y permanente de dinero, crédito de hasta 80 millones de pesos, y mucho más.</p>
+                <a href="https://www.scotiabankcolpatria.com/promociones/prestamos/plataforma-rot" class="scrot-tile-arrow"></a>
+            </div>
+
+            <div class="scrot-tile">
+                <img src="https://cdn.aglty.io/scotiabank-colombia/Colpatria/documentos/descargas-rp/Box4.png" alt="Uso crédito" class="scrot-tile-image">
+                <h3 class="scrot-tile-title"><a href="https://www.scotiabankcolpatria.com/promociones/prestamos/uso-rotativo" class="scrot-tile-link">¡Usa tu crédito rotativo para lo que necesites y llega donde quieras!</a></h3>
+                <p class="scrot-tile-description">Empieza a vivir los beneficios de tu crédito rotativo de Scotiabank Colpatria y cumple eso que siempre has deseado.</p>
+                <a href="https://www.scotiabankcolpatria.com/promociones/prestamos/uso-rotativo" class="scrot-tile-arrow"></a>
+            </div>
+
+            <div class="scrot-tile">
+                <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/imagenes/seguros/Box_Seguros_8.png" alt="Alianzas" class="scrot-tile-image">
+                <h3 class="scrot-tile-title"><a href="https://www.scotiabankcolpatria.com/alianzas" class="scrot-tile-link">¡Usa tu crédito rotativo con nuestras alianzas!</a></h3>
+                <p class="scrot-tile-description">Empieza a vivir los beneficios de tu crédito rotativo de Scotiabank Colpatria con las diferentes alianzas que tenemos para ti.</p>
+                <a href="https://www.scotiabankcolpatria.com/alianzas" class="scrot-tile-arrow"></a>
+            </div>
+
+            <div class="scrot-tile">
+                <img src="https://cdn.aglty.io/scotiabank-colombia/Colpatria/documentos/descargas-rp/eltrivi.png" alt="Descubre beneficios" class="scrot-tile-image">
+                <h3 class="scrot-tile-title"><a href="https://scotiabankcolpatriaconsumo.experienciadigital.com/eScala/#/" class="scrot-tile-link">Descubre un mundo de beneficios para ti.</a></h3>
+                <p class="scrot-tile-description">Ingresa tus datos y empieza a descubrir tus sueños</p>
+                <a href="https://scotiabankcolpatriaconsumo.experienciadigital.com/eScala/#/" class="scrot-tile-arrow"></a>
+            </div>
+
+            <div class="scrot-tile">
+                <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/2023/09/millas.PNG" alt="Millas" class="scrot-tile-image">
+                <h3 class="scrot-tile-title"><a href="https://www.scotiabankcolpatria.com/promociones/prestamos/rotativo-vacaciones" class="scrot-tile-link">¡Millas para las vacaciones que te mereces con tu Crédito Rotativo!</a></h3>
+                <p class="scrot-tile-description">Aprovecha esta oportunidad y sé uno de los ganadores; usa tu Crédito Rotativo y gana</p>
+                <a href="https://www.scotiabankcolpatria.com/promociones/prestamos/rotativo-vacaciones" class="scrot-tile-arrow"></a>
+            </div>
+
+            <div class="scrot-cta-container">
+                <h3 class="scrot-cta-title"style="font-size: 27px;">Si aún no lo tienes y eres cliente del banco, solicítalo <a href="https://www.banco.colpatria.com.co/banca-virtual/login/" class="scrot-cta-link">aquí</a></h3>
+                <h3 class="scrot-cta-title"style="font-size: 27px;">Si no eres cliente, acércate a cualquier oficina de la red Scotiabank Colpatria</h3>
+            </div>
+        </section>
+
+        <div class="container-collapsible" style="width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; margin-top: 10px;">
+            <div class="sc-accordion" style="max-width: 1140px; margin: 0 auto;">
+                <div class="sc-card-accordion">
+                    
+                    <!-- Encabezado con fondo completo -->
+                    <div class="sc-card-header scotia-black" style="width: 100vw; position: relative; left: 50%; margin-left: -50vw;">
+                    <div style="text-align: center; width: 100%;">
+                        <h2 class="title2" style="margin: 0;">Términos y Condiciones</h2>
+                    </div>
+                    <i class="icon-arrow-1-down" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%);"></i>
+                    </div>
+
+                    
+                    <!-- Contenido centrado -->
+                    <div class="sc-card-content" style="font-size: 14px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; margin-bottom: 20px;">
+                        <p class="text-s" style="text-align: justify;">
+                            &reg; Marca registrada de The Bank of Nova Scotia, utilizada bajo licencia. Scotiabank Colpatria Establecimiento Bancario. Aprobación sujeta a políticas de crédito, requisitos de la entidad y condiciones del solicitante. La tasa puede variar de acuerdo con el perfil de cliente. Consulta condiciones en: www.scotiabankcolpatria.com/préstamo. Consulta tasas y tarifas en www.scotiabankcolpatria.com sección tasas y tarifas. Sin Sanción prepago y puedes hacer abonos dirigidos a través de cualquiera de nuestros canales.
+                            <span style="text-align: start;">Mas información</span>
+                            <a href="ed-consumidor" style="text-decoration: none; color: #ef0702;">aquí</a>.
+                        </p>
+                    </div>
+
                 </div>
             </div>
-        </div>
-
-
-    <!-- Descripción -->
-    <div class="description-center" style="margin-top: 20px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
-        <p>
-        Compra de cartera o unificación de deudas que consiste en una línea de crédito de libre inversión que te permite unificar una o varias obligaciones bancarias y saldarlas a un interés menor en la que puedes hacer el pago de tus deudas de otras entidades financieras.
-        </p>
-    </div>
-
-    <!-- Beneficios principales -->
-    <section class="beneficios">
-        <div class="wrapper">
-        <div class="container-cards">
-            <div class="card">
-            <div class="card_img"><p class="card-title">Monto:</p></div>
-            <p class="card_text"><strong>Desde $1,2 Millones.</strong></p>
-            </div>
-            <div class="card">
-            <div class="card_img"><p class="card-title">Plazo:</p></div>
-            <p class="card_text"><strong>Desde 12 hasta 72 meses.</strong></p>
-            </div>
-            <div class="card">
-            <div class="card_img"><p class="card-title">Ingresos:</p></div>
-            <p class="card_text">
-                <strong>
-                Asalariados desde 2 SMMLV<br />
-                Pensionados desde 1 SMMLV<br />
-                Independientes desde 3 SMMLV
-                </strong>
-            </p>
-            </div>
-            <div class="card">
-            <div class="card_img"><p class="card-title">Edad:</p></div>
-            <p class="card_text"><strong>Desde 21 hasta 75 años</strong></p>
-            </div>
-        </div>
         </div>
     </section>
-
-    <!-- Navegación interna -->
-    <div class="sub-wrapper">
-        <div class="tab-container">
-        <strong>
-            <a class="scroll" href="#beneficios">Beneficios</a> &nbsp;&nbsp;
-            <a class="scroll" href="#caracteristicas">Características</a> &nbsp;&nbsp;
-            <a class="scroll" href="#requisitos">Requisitos</a>
-        </strong>
-        </div>
-    </div>
-
-    <!-- Beneficios Detallados -->
-    <div class="full-width">
-        <h3 id="beneficios" class="section-title">Beneficios:</h3>
-        <p class="section-description">Con tu crédito para Unificación de Deudas tienes beneficios como los siguientes:</p>
-        <p style="text-align: center;">
-        <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/2024/8/compra-de-cartera-ico-5.png" alt="Beneficios ícono" />
-        </p>
-    </div>
-
-    <!-- Características -->
-    <div class="full-width">
-        <h3 id="caracteristicas" class="section-title" style="font-size: 25px; margin-bottom: 10px;">Características</h3>
-        <ul class="features-list" style="font-size: 23px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
-        <li><strong>Plazos y cuotas convenientes:</strong> Tasa y plazo fijo hasta 72 meses durante toda la vigencia del crédito.</li>
-        <li><strong>Sin Costo:</strong> El estudio de crédito no tiene costo.</li>
-        <li><strong>Sin Codeudor:</strong> Solo necesitas tus documentos e historial de crédito positivo.</li>
-        <li><strong>Úsalo para lo que necesites:</strong> Compra de cartera, viajes, estudios, remodelación, inversión y más.</li>
-        <li><strong><a href="https://www.scotiabankcolpatria.com/tasas-y-tarifas" target="_blank" style="text-decoration: none; color: #7944bb;">Reglamento del producto</a></strong></li>
-        <li><strong><a href="https://www.scotiabankcolpatria.com/tasas-y-tarifas" target="_blank" style="text-decoration: none; color: #7944bb;">Tasas y Tarifas</a></strong></li>
-        </ul>
-    </div>
-
-    <!-- Requisitos -->
-    <div class="full-width">
-        <h3 id="requisitos" class="section-title">Requisitos de Compra de Cartera con Préstamo Personal</h3>
-        <p class="section-description" style="text-align: center; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; margin-top: 10px;">Solo si es necesario, debes presentar la documentacion requerida para solicitar tu compra de cartera.</p>
-        <ul class="requirements-list" style="font-size: 23px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
-        <li>Fotocopia de la cédula (ampliada al 150%).</li>
-        <li>Soporte de ingresos según actividad económica.</li>
-        <li>Soporte de la deuda: Extracto vigente o certificación de las obligaciones a recoger con fecha de expedición no mayor a 30 días.</li>
-        <li>Aprobación sujeta a políticas de crédito del banco.</li>
-        </ul>
-    </div>
-
-    <!-- Términos y condiciones -->
-    <div class="container-collapsible" style="width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; margin-top: 10px;">
-        <div class="sc-accordion" style="max-width: 1140px; margin: 0 auto;">
-            <div class="sc-card-accordion">
-                
-                <!-- Encabezado con fondo completo -->
-                <div class="sc-card-header scotia-black" style="width: 100vw; position: relative; left: 50%; margin-left: -50vw;">
-                <div style="text-align: center; width: 100%;">
-                    <h2 class="title2" style="margin: 0;">Términos y Condiciones</h2>
-                </div>
-                <i class="icon-arrow-1-down" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%);"></i>
-                </div>
-
-                
-                <!-- Contenido centrado -->
-                <div class="sc-card-content" style="font-size: 14px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
-                    <p class="text-s" style="text-align: justify;">
-                        &reg; Marca registrada de The Bank of Nova Scotia, utilizada bajo licencia. Scotiabank Colpatria Establecimiento Bancario. Aprobación sujeta a políticas de crédito, requisitos de la entidad y condiciones del solicitante. La tasa puede variar de acuerdo con el perfil de cliente. Consulta condiciones en: www.scotiabankcolpatria.com/préstamo. Consulta tasas y tarifas en www.scotiabankcolpatria.com sección tasas y tarifas. Sin Sanción prepago y puedes hacer abonos dirigidos a través de cualquiera de nuestros canales.
-                        <span style="text-align: start;">Mas información</span>
-                        <a href="ed-consumidor" style="text-decoration: none; color: #7944bb;">aquí</a>.
-                    </p>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-
-
-    </div>
-
 
     <footer class="footer">
         <div class="container">
@@ -1360,4 +1308,3 @@
     </footer>
 </body>
 </html>
-

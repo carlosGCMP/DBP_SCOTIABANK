@@ -9,6 +9,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
 
         body {
@@ -380,283 +381,151 @@
             font-weight: 600;
         }
 
-        /* BOTÓN FIJO */
-        .btn-fixed {
-        position: fixed;
-        right: -160px;
-        top: 60%;
-        background-color: #ec111a;
-        opacity: 0;
-        border-radius: 100px 0 0 100px;
-        z-index: 999999;
-        transition: 0.3s all ease-in-out;
-        cursor: pointer;
+        /* Estilos para Crédito Pignoración FPV */
+        .scfpv-credito-section {
+            font-family: Arial, sans-serif;
+            max-width: 1140px;
+            margin: 0 auto;
+            color: #333;
         }
 
-        .btn-fixed:hover {
-        background-color: #be061b;
-        }
-
-        .btn-fixed.active {
-        right: 0;
-        opacity: 1;
-        transition: 0.3s all ease-in-out;
-        }
-
-        .btn-fixed a {
-        padding: 18px 30px;
-        font-weight: 800;
-        font-size: 18px;
-        line-height: 20px;
-        color: #fff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-        }
-
-        .btn-fixed a.arrow {
-        font-family: "Simple-Line-Icons-Pro", sans-serif !important;
-        font-size: 16px;
-        font-weight: 700;
-        }
-
-        @media (max-width: 600px) {
-        .btn-fixed {
-            top: auto;
-            bottom: -70px;
-            right: 0;
-            border-radius: 0;
-            width: 100%;
-        }
-
-        .btn-fixed a {
-            padding: 18px 24px;
-        }
-
-        .btn-fixed.active {
-            bottom: 0;
-        }
-
-        #footer .backToTop.active {
-            bottom: 100px !important;
-        }
-        }
-
-        /* HERO (BANNER SUPERIOR) */
-        .hero {
-        height: 430px;
-        width: 100%;
-        background-color: #7944bb;
-        display: flex;
-        justify-content: center;
-        position: relative;
-        }
-
-        .hero .hero-image {
-        width: 100%;
-        max-width: 50%;
-        height: 430px;
-        flex: 1;
-        background-color: #7944bb;
-        position: absolute;
-        right: 0;
-        background-position: top center;
-        background-size: cover;
-        }
-
-        .hero .left-container {
-        position: relative;
-        flex: 1;
-        width: 100%;
-        height: 100%;
-        }
-
-        .hero .text-container {
-        height: 100%;
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 30px;
-        background-color: #7944bb;
-        padding: 90px 30px;
-        color: white;
-        }
-        .text-container p{
-            font-size: 35px;
-        }
-
-        .hero .text-container h1 {
-        font-size: 48px;
-        line-height: 54px;
-        font-family: "Scotia-Headline", "Frutiger", Arial, Helvetica, sans-serif;
-        color: #fff;
-        }
-
-        .hero .text-container .btn-pill {
-        margin-left: 0;
-        width: max-content;
-        }
-
-        .hero .text-container .btn-pill:focus {
-        color: inherit !important;
-        }
-
-        /* TEXTO CENTRADO */
-        .description-center {
-        width: 94%;
-        margin: 0 auto;
-        color: #000;
-        text-align: center;
-        font-size: 25px;
-        }
-
-        /* CARDS DE BENEFICIOS */
-        .container-cards {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        gap: 20px;
-        padding: 20px 0;
-        }
-
-        .card {
-        background-color: #ffffff;
-        border: 1px solid #ddd;
-        padding: 15px;
-        width: 220px;
-        box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
-        text-align: center;
-        }
-
-        .card_img {
-        margin-bottom: 10px;
-        }
-
-        .card-title {
-        font-size: 17px;
-        font-weight: bold;
-        }
-
-        .card_text {
-        font-size: 16px;
-        }
-
-        /* SECCIÓN DE ANCLA INTERNA */
-        .tab-container {
-        font-size: 26px;
-        background-color: #eeeeee;
-        text-align: center;
-        padding: 10px 0;
-        }
-
-        /* TÍTULOS Y SECCIONES */
-        .section-title {
-        text-align: center;
-        font-size: 25px;
-        color: #7944bb;
-        margin-top: 40px;
-        }
-
-        .section-description {
-        text-align: center;
-        font-size: 25px;
-        margin-bottom: 20px;
-        }
-
-        .features-list,
-        .requirements-list {
-        font-size: 20px;
-        padding: 0 20px;
-        list-style: none;
-        }
-
-        .features-list li::before,
-        .requirements-list li::before {
-        content: "• ";
-        color: #7944bb;
-        font-weight: bold;
-        }
-
-        /* ACORDEÓN TÉRMINOS */
-        .sc-card-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px;
-        background: #f5f5f5;
-        cursor: pointer;
-        }
-
-        .sc-card-content {
-        padding: 24px;
-        background: #fff;
-        font-size: 14px;
-        color: #333;
-        }
-
-        .icon-arrow-1-down {
-        transform: rotate(0deg);
-        transition: transform 0.3s;
-        }
-
-        .sc-card-header.active .icon-arrow-1-down {
-        transform: rotate(180deg);
-        }
-
-        /* RESPONSIVE */
-        @media screen and (max-width: 768px) {
-        .hero {
-            flex-direction: column;
-            height: auto;
-        }
-
-        .hero .hero-image {
+        .scfpv-hero-container {
             position: relative;
-            height: 200px;
-            max-width: 100%;
+            display: flex;
+            height: 240px;
+            margin-bottom: 30px;
         }
 
-        .hero .text-container {
-            width: 100%;
+        .scfpv-text-container {
+            width: 50%;
             padding: 30px;
-        }
-
-        .container-cards {
+            background-color: white;
+            display: flex;
             flex-direction: column;
-            align-items: center;
+            justify-content: center;
         }
 
-        .card {
-            width: 90%;
+        .scfpv-main-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #e9111a;
+            margin-bottom: 10px;
+            text-transform: uppercase;
         }
 
-        .headline,
-        .description-center,
-        .tab-container,
-        .section-title,
-        .section-description {
+        .scfpv-subtitle {
             font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #333;
         }
 
-        .features-list,
-        .requirements-list {
+        .scfpv-highlights {
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .scfpv-highlight-item {
+            font-size: 16px;
+            font-weight: 500;
+            color: #666;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .scfpv-highlight-item:before {
+            content: "•";
+            color: #e9111a;
+            position: absolute;
+            left: 0;
+            font-size: 20px;
+            line-height: 1;
+        }
+
+        .scfpv-hero-image {
+            width: 50%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .scfpv-content-section {
+            padding: 0 20px;
+        }
+
+        .scfpv-section-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #e9111a;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e9111a;
+            padding-bottom: 5px;
+        }
+
+        .scfpv-section-text {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .scfpv-benefit-group {
+            margin-bottom: 25px;
+        }
+
+        .scfpv-benefit-title {
             font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
         }
+
+        .scfpv-benefit-list,
+        .scfpv-requirement-list {
+            list-style-type: none;
+            padding-left: 20px;
         }
-        .tab-container {
-            font-size: 26px;
-            background-color: #eeeeee;
-            text-align: center;
+
+        .scfpv-benefit-list li,
+        .scfpv-requirement-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            line-height: 1.4;
         }
-        .tab-container a {
-            color: #8230DF;
-            text-decoration: none;
+
+        .scfpv-benefit-list li:before,
+        .scfpv-requirement-list li:before {
+            content: "-";
+            position: absolute;
+            left: 0;
+            color: #e9111a;
             font-weight: bold;
         }
 
+        /* Responsive */
+        @media (max-width: 768px) {
+            .scfpv-hero-container {
+                flex-direction: column;
+                height: auto;
+            }
+            
+            .scfpv-text-container,
+            .scfpv-hero-image {
+                width: 100%;
+            }
+            
+            .scfpv-hero-image {
+                height: 200px;
+            }
+            
+            .scfpv-main-title {
+                font-size: 24px;
+            }
+            
+            .scfpv-subtitle {
+                font-size: 18px;
+            }
+        }
 
         .footer {
             background: #333;
@@ -763,7 +632,6 @@
         }
     </style>
 </head>
-
 <body>
     <header class="header">
         <div class="header-top">
@@ -1176,140 +1044,65 @@
                     </li>
                 </ul>
             </div>
-    </nav>
+        </nav>
 
     <div class="breadcrumb">
         <div class="container">
-            <a href="index.html">Personas</a> > <a href="Prestamos.html">Prestamos</a> > <a href="#">Sin garantía</a> > <a href="Compra_de_cartera.html">Compra de cartera</a>
+            <a href="index.html">Personas</a> > <a href="Prestamos.html">Prestamos</a> > <a href="#">Con garantía</a> > <a href="consumo-pignoracion-fpv.html">Consumo Pignoración FPV</a>
         </div>
     </div>
-
-    <div id="content-body" class="container">
-        
-        <!-- Banner principal -->
-        <div class="hero" style="width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw;">
-            <div class="hero-image" style="background-image: url('https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/2024/8/23MKT0578-banner-COMPRA-DE-CARTERA-SIN-TEXT.png');"></div>
-            <div class="left-container">
-                <div class="text-container" style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
-                    <p class="headline"style="padding-left: 660px;"><strong>Unifica todas tus deudas de otros bancos con nuestro crédito de libre inversión</strong></p>
+    <!-- Sección Crédito Pignoración FPV -->
+    <section class="scfpv-credito-section">
+        <div class="scfpv-hero-container">
+            <div class="scfpv-text-container">
+                <h1 class="scfpv-main-title" style="color: black; ">Crédito de Consumo con Pignoración FPV</h1>
+                <h2 class="scfpv-subtitle" style="color: #d81e05;">Anticipa los sueños aplazados</h2>
+                <div class="scfpv-highlights">
+                    <span class="scfpv-highlight-item">Sin codeudor</span>
+                    <span class="scfpv-highlight-item">Plazo hasta 72 meses</span>
                 </div>
             </div>
+            <img src="https://cdn.aglty.io/scotiabank-colombia/Colpatria/banners/credito-rotativo.jpg" alt="Crédito Pignoración FPV" class="scfpv-hero-image">
         </div>
 
+        <div class="scfpv-content-section">
+            <div class="scfpv-definition">
+                <h3 class="scfpv-section-title" style="font-size: 36px; color: #d81e05;">¿Qué es un Crédito con pignoración FPV?</h3>
+                <p class="scfpv-section-text" style="font-size: 17px;">El Crédito de Consumo FVP es un préstamo en cual tú dejas como garantía los saldos que tienes en la cuenta de Ahorros de Fondo de Pensiones Voluntarias FPV.</p>
+            </div>
 
-    <!-- Descripción -->
-    <div class="description-center" style="margin-top: 20px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
-        <p>
-        Compra de cartera o unificación de deudas que consiste en una línea de crédito de libre inversión que te permite unificar una o varias obligaciones bancarias y saldarlas a un interés menor en la que puedes hacer el pago de tus deudas de otras entidades financieras.
-        </p>
-    </div>
+            <div class="scfpv-benefits">
+                <h3 class="scfpv-section-title"style="font-size: 36px; color: #d81e05;">Beneficios</h3>
+                <p class="scfpv-section-text" style="font-size: 17px">Con tu crédito de libre destinación con pignaración FPV tienes, entre otros los siguientes beneficios:</p>
+               
+                <div class="scfpv-benefit-group">
+                    <ul class="scfpv-benefit-list" style="font-size: 17px;">
+                        <li>Sin costo por estudio de crédito</li>
+                        <li>Cuota y plazo fijo durante la vigencia del crédito.</li>
+                        <li>Créditos desde 6 millones.</li>
+                        <li>Plazo de hasta 72 meses.</li>
+                        <li>Sin codeudor.</li>
+                        <li>Sin sanción por prepago.</li>
+                        <li>Recuerda que si deseas hacer un abono dirigido a interés y/o capital debes dirigirte a una de nuestras oficinas, los pagos adicionales a tu pago mínimo realizados a través de otros medios de pago se abonarán a tu próxima cuota.</li>
+                        <li>Tasa de interés especial.</li>
+                        <li>Cuentas con una póliza de vida que cubre el 100% del saldo de la deuda en caso de faltar o de incapacidad total o permanente.</li>
+                        <li>Formato de conocimiento del producto. Consúltalo Aquí</li>
+                    </ul>
+                </div>
+            </div>
 
-    <!-- Beneficios principales -->
-    <section class="beneficios">
-        <div class="wrapper">
-        <div class="container-cards">
-            <div class="card">
-            <div class="card_img"><p class="card-title">Monto:</p></div>
-            <p class="card_text"><strong>Desde $1,2 Millones.</strong></p>
+            <div class="scfpv-requirements" style="margin-bottom: 30px;">
+                <h3 class="scfpv-section-title"style="font-size: 36px; color: #d81e05;">Requisitos</h3>
+                <p class="scfpv-section-text"style="font-size: 17px">Ten en cuenta los documentos y requisitos para solicitar tu crédito de Libre destinación FPV Scotiabank Colpatria:</p>
+                <ul class="scfpv-requirement-list"style="font-size: 17px">
+                    <li>Edad de 21 a 75 años.</li>
+                    <li>Pagaré firmado y formulario multiproducto debidamente diligenciado.</li>
+                    <li>Fotocopia de la Cédula de Ciudadanía (Ampliada al 150 %), con firma.</li>
+                    <li>Mandato irrevocable al banco por parte del afiliado-deudor con firma y huella, mediante el cual prenda la suma de dinero de su fondo en una determinada cuantía el cual debe tener visación de firma de parte del Fondo de Pensiones.</li>
+                </ul>
             </div>
-            <div class="card">
-            <div class="card_img"><p class="card-title">Plazo:</p></div>
-            <p class="card_text"><strong>Desde 12 hasta 72 meses.</strong></p>
-            </div>
-            <div class="card">
-            <div class="card_img"><p class="card-title">Ingresos:</p></div>
-            <p class="card_text">
-                <strong>
-                Asalariados desde 2 SMMLV<br />
-                Pensionados desde 1 SMMLV<br />
-                Independientes desde 3 SMMLV
-                </strong>
-            </p>
-            </div>
-            <div class="card">
-            <div class="card_img"><p class="card-title">Edad:</p></div>
-            <p class="card_text"><strong>Desde 21 hasta 75 años</strong></p>
-            </div>
-        </div>
         </div>
     </section>
-
-    <!-- Navegación interna -->
-    <div class="sub-wrapper">
-        <div class="tab-container">
-        <strong>
-            <a class="scroll" href="#beneficios">Beneficios</a> &nbsp;&nbsp;
-            <a class="scroll" href="#caracteristicas">Características</a> &nbsp;&nbsp;
-            <a class="scroll" href="#requisitos">Requisitos</a>
-        </strong>
-        </div>
-    </div>
-
-    <!-- Beneficios Detallados -->
-    <div class="full-width">
-        <h3 id="beneficios" class="section-title">Beneficios:</h3>
-        <p class="section-description">Con tu crédito para Unificación de Deudas tienes beneficios como los siguientes:</p>
-        <p style="text-align: center;">
-        <img src="https://cdn.aglty.io/scotiabank-colombia/scotiabank-colpatria/2024/8/compra-de-cartera-ico-5.png" alt="Beneficios ícono" />
-        </p>
-    </div>
-
-    <!-- Características -->
-    <div class="full-width">
-        <h3 id="caracteristicas" class="section-title" style="font-size: 25px; margin-bottom: 10px;">Características</h3>
-        <ul class="features-list" style="font-size: 23px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
-        <li><strong>Plazos y cuotas convenientes:</strong> Tasa y plazo fijo hasta 72 meses durante toda la vigencia del crédito.</li>
-        <li><strong>Sin Costo:</strong> El estudio de crédito no tiene costo.</li>
-        <li><strong>Sin Codeudor:</strong> Solo necesitas tus documentos e historial de crédito positivo.</li>
-        <li><strong>Úsalo para lo que necesites:</strong> Compra de cartera, viajes, estudios, remodelación, inversión y más.</li>
-        <li><strong><a href="https://www.scotiabankcolpatria.com/tasas-y-tarifas" target="_blank" style="text-decoration: none; color: #7944bb;">Reglamento del producto</a></strong></li>
-        <li><strong><a href="https://www.scotiabankcolpatria.com/tasas-y-tarifas" target="_blank" style="text-decoration: none; color: #7944bb;">Tasas y Tarifas</a></strong></li>
-        </ul>
-    </div>
-
-    <!-- Requisitos -->
-    <div class="full-width">
-        <h3 id="requisitos" class="section-title">Requisitos de Compra de Cartera con Préstamo Personal</h3>
-        <p class="section-description" style="text-align: center; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; margin-top: 10px;">Solo si es necesario, debes presentar la documentacion requerida para solicitar tu compra de cartera.</p>
-        <ul class="requirements-list" style="font-size: 23px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
-        <li>Fotocopia de la cédula (ampliada al 150%).</li>
-        <li>Soporte de ingresos según actividad económica.</li>
-        <li>Soporte de la deuda: Extracto vigente o certificación de las obligaciones a recoger con fecha de expedición no mayor a 30 días.</li>
-        <li>Aprobación sujeta a políticas de crédito del banco.</li>
-        </ul>
-    </div>
-
-    <!-- Términos y condiciones -->
-    <div class="container-collapsible" style="width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; margin-top: 10px;">
-        <div class="sc-accordion" style="max-width: 1140px; margin: 0 auto;">
-            <div class="sc-card-accordion">
-                
-                <!-- Encabezado con fondo completo -->
-                <div class="sc-card-header scotia-black" style="width: 100vw; position: relative; left: 50%; margin-left: -50vw;">
-                <div style="text-align: center; width: 100%;">
-                    <h2 class="title2" style="margin: 0;">Términos y Condiciones</h2>
-                </div>
-                <i class="icon-arrow-1-down" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%);"></i>
-                </div>
-
-                
-                <!-- Contenido centrado -->
-                <div class="sc-card-content" style="font-size: 14px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
-                    <p class="text-s" style="text-align: justify;">
-                        &reg; Marca registrada de The Bank of Nova Scotia, utilizada bajo licencia. Scotiabank Colpatria Establecimiento Bancario. Aprobación sujeta a políticas de crédito, requisitos de la entidad y condiciones del solicitante. La tasa puede variar de acuerdo con el perfil de cliente. Consulta condiciones en: www.scotiabankcolpatria.com/préstamo. Consulta tasas y tarifas en www.scotiabankcolpatria.com sección tasas y tarifas. Sin Sanción prepago y puedes hacer abonos dirigidos a través de cualquiera de nuestros canales.
-                        <span style="text-align: start;">Mas información</span>
-                        <a href="ed-consumidor" style="text-decoration: none; color: #7944bb;">aquí</a>.
-                    </p>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-
-
-    </div>
-
 
     <footer class="footer">
         <div class="container">
@@ -1360,4 +1153,3 @@
     </footer>
 </body>
 </html>
-
